@@ -1,0 +1,32 @@
+# binaries
+*.exe
+
+# virtual environment files
+.venv/**
+
+# arquivos temporários
+~$*
+
+# arquivos de cache python
+**/__pycache__/**
+
+# arquivos de simulacao - não salvar
+00-arquivos de simulacao/**
+03-simulation_cases/aspen_files/**
+
+# modelos de trials (Opt e Opt2) — manter apenas o best
+*-Opt/models/*trial*/**
+*-Opt2/models/*trial*/**
+*-Opt/results/logs/*trial*/**
+*-Opt2/results/logs/*trial*/**
+*-Opt/models/*trial*/**
+*-Opt2/models/*trial*/**
+
+
+# arquivos de simulacao - salvar
+# !**/
+# !**/*.apwz
+# !**/*.bkp
+# !**/*.appdf
+# !**/*.dynf
+# !**/*.snp

@@ -1,0 +1,165 @@
+2026-03-25 12:17:46,568 - INFO - =============================================================
+2026-03-25 12:17:46,568 - INFO - Starting training: DDPG_rewardA_01_20260325_121746
+2026-03-25 12:17:46,568 - INFO - Reward type: A
+2026-03-25 12:17:46,568 - INFO - Total timesteps: 500000
+2026-03-25 12:17:46,568 - INFO - DDPG hyperparams: {'learning_rate': 0.001, 'buffer_size': 100000, 'learning_starts': 1000, 'batch_size': 256, 'tau': 0.005, 'gamma': 0.99, 'train_freq': 1, 'gradient_steps': 1}
+2026-03-25 12:17:46,569 - INFO - Action noise sigma: 0.1
+2026-03-25 12:17:46,569 - INFO - =============================================================
+2026-03-25 12:17:48,242 - INFO - Policy architecture: TD3Policy(
+  (actor): Actor(
+    (features_extractor): FlattenExtractor(
+      (flatten): Flatten(start_dim=1, end_dim=-1)
+    )
+    (mu): Sequential(
+      (0): Linear(in_features=6, out_features=400, bias=True)
+      (1): ReLU()
+      (2): Linear(in_features=400, out_features=300, bias=True)
+      (3): ReLU()
+      (4): Linear(in_features=300, out_features=1, bias=True)
+      (5): Tanh()
+    )
+  )
+  (actor_target): Actor(
+    (features_extractor): FlattenExtractor(
+      (flatten): Flatten(start_dim=1, end_dim=-1)
+    )
+    (mu): Sequential(
+      (0): Linear(in_features=6, out_features=400, bias=True)
+      (1): ReLU()
+      (2): Linear(in_features=400, out_features=300, bias=True)
+      (3): ReLU()
+      (4): Linear(in_features=300, out_features=1, bias=True)
+      (5): Tanh()
+    )
+  )
+  (critic): ContinuousCritic(
+    (features_extractor): FlattenExtractor(
+      (flatten): Flatten(start_dim=1, end_dim=-1)
+    )
+    (qf0): Sequential(
+      (0): Linear(in_features=7, out_features=400, bias=True)
+      (1): ReLU()
+      (2): Linear(in_features=400, out_features=300, bias=True)
+      (3): ReLU()
+      (4): Linear(in_features=300, out_features=1, bias=True)
+    )
+  )
+  (critic_target): ContinuousCritic(
+    (features_extractor): FlattenExtractor(
+      (flatten): Flatten(start_dim=1, end_dim=-1)
+    )
+    (qf0): Sequential(
+      (0): Linear(in_features=7, out_features=400, bias=True)
+      (1): ReLU()
+      (2): Linear(in_features=400, out_features=300, bias=True)
+      (3): ReLU()
+      (4): Linear(in_features=300, out_features=1, bias=True)
+    )
+  )
+)
+2026-03-25 12:18:30,703 - INFO - Step     5000 | Episodes:   166 | Mean reward (last 50):  181.051 | Std:  38.662
+2026-03-25 12:19:20,017 - INFO - Step    10000 | Episodes:   333 | Mean reward (last 50):  198.155 | Std:  42.596
+2026-03-25 12:20:07,351 - INFO - Step    15000 | Episodes:   500 | Mean reward (last 50):  223.061 | Std:  30.200
+2026-03-25 12:20:54,121 - INFO - Step    20000 | Episodes:   666 | Mean reward (last 50):  217.334 | Std:  32.871
+2026-03-25 12:21:38,849 - INFO - Step    25000 | Episodes:   833 | Mean reward (last 50):  227.313 | Std:  26.808
+2026-03-25 12:22:25,778 - INFO - Step    30000 | Episodes:  1000 | Mean reward (last 50):  230.993 | Std:  26.050
+2026-03-25 12:23:10,228 - INFO - Step    35000 | Episodes:  1166 | Mean reward (last 50):  229.313 | Std:  30.953
+2026-03-25 12:23:56,636 - INFO - Step    40000 | Episodes:  1333 | Mean reward (last 50):  224.767 | Std:  32.103
+2026-03-25 12:24:40,918 - INFO - Step    45000 | Episodes:  1500 | Mean reward (last 50):  224.362 | Std:  33.799
+2026-03-25 12:25:27,264 - INFO - Step    50000 | Episodes:  1666 | Mean reward (last 50):  226.645 | Std:  33.332
+2026-03-25 12:26:11,712 - INFO - Step    55000 | Episodes:  1833 | Mean reward (last 50):  226.433 | Std:  31.000
+2026-03-25 12:26:58,104 - INFO - Step    60000 | Episodes:  2000 | Mean reward (last 50):  225.424 | Std:  34.313
+2026-03-25 12:27:42,639 - INFO - Step    65000 | Episodes:  2166 | Mean reward (last 50):  225.885 | Std:  30.778
+2026-03-25 12:28:29,513 - INFO - Step    70000 | Episodes:  2333 | Mean reward (last 50):  234.230 | Std:  25.283
+2026-03-25 12:29:14,748 - INFO - Step    75000 | Episodes:  2500 | Mean reward (last 50):  213.586 | Std:  37.081
+2026-03-25 12:30:02,104 - INFO - Step    80000 | Episodes:  2666 | Mean reward (last 50):  217.599 | Std:  34.797
+2026-03-25 12:30:47,661 - INFO - Step    85000 | Episodes:  2833 | Mean reward (last 50):  219.517 | Std:  32.475
+2026-03-25 12:31:35,174 - INFO - Step    90000 | Episodes:  3000 | Mean reward (last 50):  212.180 | Std:  34.977
+2026-03-25 12:32:20,781 - INFO - Step    95000 | Episodes:  3166 | Mean reward (last 50):  217.214 | Std:  38.978
+2026-03-25 12:33:08,088 - INFO - Step   100000 | Episodes:  3333 | Mean reward (last 50):  219.755 | Std:  34.766
+2026-03-25 12:33:53,592 - INFO - Step   105000 | Episodes:  3500 | Mean reward (last 50):  231.106 | Std:  33.404
+2026-03-25 12:34:41,092 - INFO - Step   110000 | Episodes:  3666 | Mean reward (last 50):  230.760 | Std:  31.358
+2026-03-25 12:35:26,877 - INFO - Step   115000 | Episodes:  3833 | Mean reward (last 50):  222.582 | Std:  33.330
+2026-03-25 12:36:14,340 - INFO - Step   120000 | Episodes:  4000 | Mean reward (last 50):  225.707 | Std:  32.030
+2026-03-25 12:36:59,771 - INFO - Step   125000 | Episodes:  4166 | Mean reward (last 50):  225.894 | Std:  35.146
+2026-03-25 12:37:47,349 - INFO - Step   130000 | Episodes:  4333 | Mean reward (last 50):  221.229 | Std:  32.422
+2026-03-25 12:38:33,087 - INFO - Step   135000 | Episodes:  4500 | Mean reward (last 50):  231.915 | Std:  30.899
+2026-03-25 12:39:20,915 - INFO - Step   140000 | Episodes:  4666 | Mean reward (last 50):  223.685 | Std:  33.706
+2026-03-25 12:40:09,025 - INFO - Step   145000 | Episodes:  4833 | Mean reward (last 50):  223.933 | Std:  36.085
+2026-03-25 12:40:57,987 - INFO - Step   150000 | Episodes:  5000 | Mean reward (last 50):  225.808 | Std:  31.498
+2026-03-25 12:41:43,847 - INFO - Step   155000 | Episodes:  5166 | Mean reward (last 50):  232.181 | Std:  34.455
+2026-03-25 12:42:33,757 - INFO - Step   160000 | Episodes:  5333 | Mean reward (last 50):  221.072 | Std:  34.435
+2026-03-25 12:43:20,726 - INFO - Step   165000 | Episodes:  5500 | Mean reward (last 50):  226.119 | Std:  30.965
+2026-03-25 12:44:04,593 - INFO - Step   170000 | Episodes:  5666 | Mean reward (last 50):  229.035 | Std:  29.727
+2026-03-25 12:44:47,608 - INFO - Step   175000 | Episodes:  5833 | Mean reward (last 50):  229.259 | Std:  33.212
+2026-03-25 12:45:35,314 - INFO - Step   180000 | Episodes:  6000 | Mean reward (last 50):  223.224 | Std:  34.406
+2026-03-25 12:46:21,285 - INFO - Step   185000 | Episodes:  6166 | Mean reward (last 50):  220.371 | Std:  35.814
+2026-03-25 12:47:09,122 - INFO - Step   190000 | Episodes:  6333 | Mean reward (last 50):  228.121 | Std:  32.726
+2026-03-25 12:47:54,993 - INFO - Step   195000 | Episodes:  6500 | Mean reward (last 50):  223.493 | Std:  36.046
+2026-03-25 12:48:42,784 - INFO - Step   200000 | Episodes:  6666 | Mean reward (last 50):  227.032 | Std:  34.508
+2026-03-25 12:49:28,760 - INFO - Step   205000 | Episodes:  6833 | Mean reward (last 50):  228.296 | Std:  32.701
+2026-03-25 12:50:16,351 - INFO - Step   210000 | Episodes:  7000 | Mean reward (last 50):  227.302 | Std:  32.833
+2026-03-25 12:51:02,113 - INFO - Step   215000 | Episodes:  7166 | Mean reward (last 50):  220.982 | Std:  36.223
+2026-03-25 12:51:49,731 - INFO - Step   220000 | Episodes:  7333 | Mean reward (last 50):  228.639 | Std:  33.070
+2026-03-25 12:52:35,702 - INFO - Step   225000 | Episodes:  7500 | Mean reward (last 50):  227.363 | Std:  33.555
+2026-03-25 12:53:23,352 - INFO - Step   230000 | Episodes:  7666 | Mean reward (last 50):  237.078 | Std:  27.066
+2026-03-25 12:54:09,004 - INFO - Step   235000 | Episodes:  7833 | Mean reward (last 50):  228.380 | Std:  32.409
+2026-03-25 12:54:56,757 - INFO - Step   240000 | Episodes:  8000 | Mean reward (last 50):  221.683 | Std:  35.424
+2026-03-25 12:55:42,629 - INFO - Step   245000 | Episodes:  8166 | Mean reward (last 50):  225.288 | Std:  36.469
+2026-03-25 12:56:30,293 - INFO - Step   250000 | Episodes:  8333 | Mean reward (last 50):  224.937 | Std:  33.483
+2026-03-25 12:57:16,358 - INFO - Step   255000 | Episodes:  8500 | Mean reward (last 50):  227.482 | Std:  32.613
+2026-03-25 12:58:04,089 - INFO - Step   260000 | Episodes:  8666 | Mean reward (last 50):  224.965 | Std:  35.072
+2026-03-25 12:58:50,000 - INFO - Step   265000 | Episodes:  8833 | Mean reward (last 50):  226.816 | Std:  32.620
+2026-03-25 12:59:37,589 - INFO - Step   270000 | Episodes:  9000 | Mean reward (last 50):  225.212 | Std:  35.337
+2026-03-25 13:00:23,551 - INFO - Step   275000 | Episodes:  9166 | Mean reward (last 50):  225.352 | Std:  33.920
+2026-03-25 13:01:11,188 - INFO - Step   280000 | Episodes:  9333 | Mean reward (last 50):  223.019 | Std:  35.296
+2026-03-25 13:01:57,124 - INFO - Step   285000 | Episodes:  9500 | Mean reward (last 50):  228.148 | Std:  35.060
+2026-03-25 13:02:44,862 - INFO - Step   290000 | Episodes:  9666 | Mean reward (last 50):  222.557 | Std:  34.366
+2026-03-25 13:03:30,512 - INFO - Step   295000 | Episodes:  9833 | Mean reward (last 50):  228.064 | Std:  32.817
+2026-03-25 13:04:17,993 - INFO - Step   300000 | Episodes: 10000 | Mean reward (last 50):  229.747 | Std:  33.325
+2026-03-25 13:05:03,797 - INFO - Step   305000 | Episodes: 10166 | Mean reward (last 50):  218.494 | Std:  38.540
+2026-03-25 13:05:51,227 - INFO - Step   310000 | Episodes: 10333 | Mean reward (last 50):  233.526 | Std:  28.516
+2026-03-25 13:06:36,914 - INFO - Step   315000 | Episodes: 10500 | Mean reward (last 50):  228.400 | Std:  32.987
+2026-03-25 13:07:24,290 - INFO - Step   320000 | Episodes: 10666 | Mean reward (last 50):  229.905 | Std:  35.301
+2026-03-25 13:08:09,952 - INFO - Step   325000 | Episodes: 10833 | Mean reward (last 50):  217.836 | Std:  31.844
+2026-03-25 13:08:57,599 - INFO - Step   330000 | Episodes: 11000 | Mean reward (last 50):  217.917 | Std:  34.412
+2026-03-25 13:09:43,529 - INFO - Step   335000 | Episodes: 11166 | Mean reward (last 50):  234.069 | Std:  34.224
+2026-03-25 13:10:31,054 - INFO - Step   340000 | Episodes: 11333 | Mean reward (last 50):  233.621 | Std:  28.555
+2026-03-25 13:11:16,935 - INFO - Step   345000 | Episodes: 11500 | Mean reward (last 50):  226.877 | Std:  33.539
+2026-03-25 13:12:04,615 - INFO - Step   350000 | Episodes: 11666 | Mean reward (last 50):  224.490 | Std:  35.485
+2026-03-25 13:12:50,620 - INFO - Step   355000 | Episodes: 11833 | Mean reward (last 50):  223.093 | Std:  34.879
+2026-03-25 13:13:38,502 - INFO - Step   360000 | Episodes: 12000 | Mean reward (last 50):  225.647 | Std:  35.722
+2026-03-25 13:14:24,227 - INFO - Step   365000 | Episodes: 12166 | Mean reward (last 50):  220.179 | Std:  35.910
+2026-03-25 13:15:11,815 - INFO - Step   370000 | Episodes: 12333 | Mean reward (last 50):  225.973 | Std:  32.013
+2026-03-25 13:15:57,777 - INFO - Step   375000 | Episodes: 12500 | Mean reward (last 50):  225.402 | Std:  33.906
+2026-03-25 13:16:45,543 - INFO - Step   380000 | Episodes: 12666 | Mean reward (last 50):  222.885 | Std:  33.246
+2026-03-25 13:17:31,309 - INFO - Step   385000 | Episodes: 12833 | Mean reward (last 50):  217.544 | Std:  34.831
+2026-03-25 13:18:18,974 - INFO - Step   390000 | Episodes: 13000 | Mean reward (last 50):  223.308 | Std:  34.270
+2026-03-25 13:19:05,090 - INFO - Step   395000 | Episodes: 13166 | Mean reward (last 50):  227.117 | Std:  33.637
+2026-03-25 13:19:52,973 - INFO - Step   400000 | Episodes: 13333 | Mean reward (last 50):  232.976 | Std:  30.761
+2026-03-25 13:20:39,133 - INFO - Step   405000 | Episodes: 13500 | Mean reward (last 50):  228.445 | Std:  33.406
+2026-03-25 13:21:27,110 - INFO - Step   410000 | Episodes: 13666 | Mean reward (last 50):  222.528 | Std:  34.067
+2026-03-25 13:22:13,044 - INFO - Step   415000 | Episodes: 13833 | Mean reward (last 50):  224.621 | Std:  36.641
+2026-03-25 13:23:00,800 - INFO - Step   420000 | Episodes: 14000 | Mean reward (last 50):  228.520 | Std:  30.812
+2026-03-25 13:23:46,638 - INFO - Step   425000 | Episodes: 14166 | Mean reward (last 50):  228.973 | Std:  31.754
+2026-03-25 13:24:34,235 - INFO - Step   430000 | Episodes: 14333 | Mean reward (last 50):  216.524 | Std:  36.351
+2026-03-25 13:25:20,337 - INFO - Step   435000 | Episodes: 14500 | Mean reward (last 50):  230.868 | Std:  31.670
+2026-03-25 13:26:08,161 - INFO - Step   440000 | Episodes: 14666 | Mean reward (last 50):  221.558 | Std:  35.923
+2026-03-25 13:26:54,081 - INFO - Step   445000 | Episodes: 14833 | Mean reward (last 50):  228.039 | Std:  31.303
+2026-03-25 13:27:41,877 - INFO - Step   450000 | Episodes: 15000 | Mean reward (last 50):  225.981 | Std:  35.012
+2026-03-25 13:28:27,783 - INFO - Step   455000 | Episodes: 15166 | Mean reward (last 50):  224.618 | Std:  38.557
+2026-03-25 13:29:15,742 - INFO - Step   460000 | Episodes: 15333 | Mean reward (last 50):  225.520 | Std:  31.142
+2026-03-25 13:30:01,667 - INFO - Step   465000 | Episodes: 15500 | Mean reward (last 50):  229.892 | Std:  31.221
+2026-03-25 13:30:49,492 - INFO - Step   470000 | Episodes: 15666 | Mean reward (last 50):  217.540 | Std:  36.688
+2026-03-25 13:31:35,582 - INFO - Step   475000 | Episodes: 15833 | Mean reward (last 50):  232.989 | Std:  32.322
+2026-03-25 13:32:23,066 - INFO - Step   480000 | Episodes: 16000 | Mean reward (last 50):  221.271 | Std:  31.434
+2026-03-25 13:33:08,743 - INFO - Step   485000 | Episodes: 16166 | Mean reward (last 50):  224.366 | Std:  33.708
+2026-03-25 13:33:56,553 - INFO - Step   490000 | Episodes: 16333 | Mean reward (last 50):  224.002 | Std:  33.342
+2026-03-25 13:34:42,418 - INFO - Step   495000 | Episodes: 16500 | Mean reward (last 50):  231.849 | Std:  32.168
+2026-03-25 13:35:30,361 - INFO - Step   500000 | Episodes: 16666 | Mean reward (last 50):  220.242 | Std:  36.457
+2026-03-25 13:35:30,385 - INFO - Final model saved to c:\Users\davib\Downloads\Pesquisa\08-agentRL-DDPG\models\DDPG_rewardA_01_20260325_121746\final_model
+2026-03-25 13:35:30,385 - INFO - VecNormalize stats saved to c:\Users\davib\Downloads\Pesquisa\08-agentRL-DDPG\models\DDPG_rewardA_01_20260325_121746/vec_normalize.pkl
+2026-03-25 13:35:30,631 - INFO - Episode log saved to c:\Users\davib\Downloads\Pesquisa\08-agentRL-DDPG\models\DDPG_rewardA_01_20260325_121746\episode_log.json (16666 episodes)
+2026-03-25 13:35:30,631 - INFO - Training complete: DDPG_rewardA_01_20260325_121746
+2026-03-25 13:35:30,631 - INFO - Total episodes: 16666
+2026-03-25 13:35:30,631 - INFO - Mean reward (last 100): 226.1298

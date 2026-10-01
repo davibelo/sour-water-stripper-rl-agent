@@ -1,0 +1,77 @@
+============================================================
+CALIBRACAO DE PARAMETROS DA RECOMPENSA C
+============================================================
+
+Total de amostras: 1000
+
+--- Estatisticas de delta_T = Tbottom - Ttop ---
+count    1000.000000
+mean       30.026172
+std        40.070552
+min         2.054703
+25%         3.353862
+50%         5.654641
+75%        58.632270
+max       106.821858
+
+--- Percentis de delta_T ---
+  P05: 2.5721
+  P10: 2.7811
+  P25: 3.3539
+  P50: 5.6546
+  P75: 58.6323
+  P90: 103.3390
+  P95: 104.6450
+
+--- Estatisticas de Qreb ---
+count    1000.000000
+mean        4.200044
+std         1.039731
+min         2.400655
+25%         3.300359
+50%         4.199891
+75%         5.099193
+max         5.999008
+
+QREB_NOM (centro da faixa): 4.1998
+
+--- Regiao do joelho (Qreb entre 3.0 e 4.5) ---
+  Amostras nessa faixa: 416
+  delta_T medio:   27.7868
+  delta_T mediana: 9.7906
+  delta_T std:     32.0415
+
+============================================================
+SUGESTAO DE PARAMETROS
+============================================================
+
+delta_t_ref (mediana global de delta_T): 5.6546
+
+IQR de delta_T: 55.2784
+sigma sugerido (IQR / 2): 27.6392
+
+Range de delta_T: 104.7672
+sigma alternativo (range / 6): 17.4612
+
+--- Verificacao da tanh com os valores sugeridos ---
+  Usando delta_t_ref=5.65, sigma=27.64:
+    delta_T=    2.05 (    min) -> tanh = -0.1295
+    delta_T=    3.35 (    P25) -> tanh = -0.0831
+    delta_T=    5.65 (mediana) -> tanh = +0.0000
+    delta_T=   58.63 (    P75) -> tanh = +0.9576
+    delta_T=  106.82 (    max) -> tanh = +0.9987
+
+--- Verificacao com sigma alternativo (range/6) ---
+  Usando delta_t_ref=5.65, sigma=17.46:
+    delta_T=    2.05 (    min) -> tanh = -0.2033
+    delta_T=    3.35 (    P25) -> tanh = -0.1310
+    delta_T=    5.65 (mediana) -> tanh = +0.0000
+    delta_T=   58.63 (    P75) -> tanh = +0.9954
+    delta_T=  106.82 (    max) -> tanh = +1.0000
+
+============================================================
+VALORES RECOMENDADOS PARA config.py
+============================================================
+  "delta_t_ref": 5.7,
+  "sigma": 27.6,
+============================================================

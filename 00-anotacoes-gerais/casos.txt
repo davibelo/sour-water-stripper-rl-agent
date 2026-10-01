@@ -1,0 +1,34 @@
+CASOS
+
+
+Casos 1 a 4:  75% H2S / 75% NH3 (Composição Mássica H2S 2625ppm, NH3 2250ppm) Total Cont.: 4875ppm
+
+Caso 1: Vazão Mássica de alimentação reduzida em 5% (50000 - 2500 = 47.500)
+Caso 2: Vazão Mássica de alimentação aumentada em 5% (50000 + 2500 = 52.500)
+
+Caso 3: Temperatura de alimentação reduzida em 2,5% (122 - 3.05 = 118.95)
+Caso 4: Temperatura de alimentação aumentada em 2,5% (122 + 3.05 = 125.05)
+
+Caso 5: 25% H2S / 25% NH3 (Composição Mássica H2S 875ppm, NH3 750ppm) Total Cont.: 1625ppm
+Caso 6: 50% H2S / 50% NH3 (Composição Mássica H2S 1750ppm, NH3 1500ppm) Total Cont.: 3250ppm
+Caso 7: 50% H2S / Máximo NH3 (Composição Mássica H2S 1750ppm, NH3 3000ppm) Total Cont.: 4750ppm
+Caso 8: 75% H2S / 75% NH3 (Composição Mássica H2S 2625ppm, NH3 2250ppm) Total Cont.: 4875ppm
+Caso 9: Máximo H2S / 50% NH3 (Composição Mássica H2S 3500ppm, NH3 1500ppm) Total Cont.: 5000ppm
+Caso 10: Máximo H2S / Máximo NH3 (Composição Mássica H2S 3500ppm, NH3 3000ppm) Total Cont.: 6500ppm
+
+
+---------------
+
+Casos 1 a 4: H2S 2625ppm, NH3 2250ppm
+
+Caso 1: Vazão Mássica - 5%
+Caso 2: Vazão Mássica + 5%
+Caso 3: Temperatura de alimentação - 2,5%
+Caso 4: Temperatura de alimentação + 2,5%
+Caso 5: H2S 875ppm NH3 750ppm
+Caso 6: H2S 1750ppm NH3 1500ppm
+Caso 7: H2S 1750ppm NH3 3000ppm
+Caso 8: H2S 2625ppm NH3 2250ppm
+Caso 9: H2S 3500ppm NH3 1500ppm
+Caso 10: H2S 3500ppm NH3 3000ppm
+

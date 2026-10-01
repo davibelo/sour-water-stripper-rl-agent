@@ -1,0 +1,972 @@
+{
+  "best_trial": 46,
+  "best_value": 783.4901988000001,
+  "best_params": {
+    "learning_rate": 0.00040184814723675876,
+    "buffer_size": 100000,
+    "learning_starts": 2173,
+    "batch_size": 256,
+    "tau": 0.006554611989564873,
+    "gamma": 0.9554116968850899,
+    "train_freq": 4,
+    "gradient_steps": 4,
+    "noise_sigma": 0.24070283641855783,
+    "w1": 0.28668748927739673,
+    "w2": 0.650396582494094,
+    "w3": 0.8613609563753646
+  },
+  "n_trials": 50,
+  "optuna_timesteps": 150000,
+  "trials": [
+    {
+      "number": 0,
+      "value": 394.71244935000004,
+      "params": {
+        "learning_rate": 0.0005611516415334506,
+        "buffer_size": 50000,
+        "learning_starts": 1202,
+        "batch_size": 256,
+        "tau": 0.03569555631200623,
+        "gamma": 0.9020378649352845,
+        "train_freq": 1,
+        "gradient_steps": 4,
+        "noise_sigma": 0.16217936517334897,
+        "w1": 0.15798625466052896,
+        "w2": 0.7912291401980419,
+        "w3": 0.9565940526113312
+      },
+      "state": "TrialState.COMPLETE"
+    },
+    {
+      "number": 1,
+      "value": 352.78929934999996,
+      "params": {
+        "learning_rate": 0.00019010245319870352,
+        "buffer_size": 200000,
+        "learning_starts": 4034,
+        "batch_size": 256,
+        "tau": 0.030769697743170482,
+        "gamma": 0.9168818882450419,
+        "train_freq": 4,
+        "gradient_steps": 1,
+        "noise_sigma": 0.2084275776885255,
+        "w1": 0.16003812343490031,
+        "w2": 0.6220382348447788,
+        "w3": 0.7932476741557782
+      },
+      "state": "TrialState.COMPLETE"
+    },
+    {
+      "number": 2,
+      "value": 285.6489341999999,
+      "params": {
+        "learning_rate": 0.00011715937392307068,
+        "buffer_size": 50000,
+        "learning_starts": 1903,
+        "batch_size": 512,
+        "tau": 0.03898150834469462,
+        "gamma": 0.9930103952148547,
+        "train_freq": 4,
+        "gradient_steps": 2,
+        "noise_sigma": 0.10434579592134664,
+        "w1": 0.14716932242237052,
+        "w2": 0.7713490317738959,
+        "w3": 1.260232512812701
+      },
+      "state": "TrialState.COMPLETE"
+    },
+    {
+      "number": 3,
+      "value": 530.7204988000001,
+      "params": {
+        "learning_rate": 0.0005170191786366995,
+        "buffer_size": 100000,
+        "learning_starts": 4110,
+        "batch_size": 128,
+        "tau": 0.0012705837390565176,
+        "gamma": 0.9807306814170286,
+        "train_freq": 4,
+        "gradient_steps": 2,
+        "noise_sigma": 0.26029999350392213,
+        "w1": 0.20582453170688947,
+        "w2": 0.8308980248526492,
+        "w3": 0.18898169040043308
+      },
+      "state": "TrialState.COMPLETE"
+    },
+    {
+      "number": 4,
+      "value": 287.08116314999995,
+      "params": {
+        "learning_rate": 0.0004187594718900631,
+        "buffer_size": 100000,
+        "learning_starts": 4493,
+        "batch_size": 512,
+        "tau": 0.028502582680905317,
+        "gamma": 0.9763257508155015,
+        "train_freq": 2,
+        "gradient_steps": 2,
+        "noise_sigma": 0.19455901926649632,
+        "w1": 0.12858899526908169,
+        "w2": 1.0085706911647028,
+        "w3": 1.3705930634965302
+      },
+      "state": "TrialState.COMPLETE"
+    },
+    {
+      "number": 5,
+      "value": 162.11027245,
+      "params": {
+        "learning_rate": 0.00031519872951938895,
+        "buffer_size": 100000,
+        "learning_starts": 846,
+        "batch_size": 256,
+        "tau": 0.03203678406901075,
+        "gamma": 0.9862745984285841,
+        "train_freq": 4,
+        "gradient_steps": 4,
+        "noise_sigma": 0.10222100774184051,
+        "w1": 0.07751298113191919,
+        "w2": 0.7279351625419417,
+        "w3": 0.6979509040767587
+      },
+      "state": "TrialState.COMPLETE"
+    },
+    {
+      "number": 6,
+      "value": 245.90677964999995,
+      "params": {
+        "learning_rate": 0.00432543242796456,
+        "buffer_size": 50000,
+        "learning_starts": 2378,
+        "batch_size": 512,
+        "tau": 0.01683694366901701,
+        "gamma": 0.9513602715525933,
+        "train_freq": 4,
+        "gradient_steps": 1,
+        "noise_sigma": 0.09725470984686319,
+        "w1": 0.1212101235943669,
+        "w2": 0.5368869473545328,
+        "w3": 0.9533900675718555
+      },
+      "state": "TrialState.COMPLETE"
+    },
+    {
+      "number": 7,
+      "value": 684.9567714,
+      "params": {
+        "learning_rate": 0.0010124137770478635,
+        "buffer_size": 200000,
+        "learning_starts": 1578,
+        "batch_size": 256,
+        "tau": 0.03393464182288805,
+        "gamma": 0.975400341917543,
+        "train_freq": 2,
+        "gradient_steps": 2,
+        "noise_sigma": 0.03618403331577841,
+        "w1": 0.2588256238973095,
+        "w2": 0.8207800649717358,
+        "w3": 0.3611259145597959
+      },
+      "state": "TrialState.COMPLETE"
+    },
+    {
+      "number": 8,
+      "value": 576.1789679999999,
+      "params": {
+        "learning_rate": 0.00012065637774378946,
+        "buffer_size": 100000,
+        "learning_starts": 2804,
+        "batch_size": 512,
+        "tau": 0.019950031968726335,
+        "gamma": 0.9927362688849367,
+        "train_freq": 2,
+        "gradient_steps": 1,
+        "noise_sigma": 0.20139537334991192,
+        "w1": 0.254305550050304,
+        "w2": 1.0552008115994624,
+        "w3": 0.841510809698409
+      },
+      "state": "TrialState.COMPLETE"
+    },
+    {
+      "number": 9,
+      "value": 585.7479190500001,
+      "params": {
+        "learning_rate": 0.00030458224385894087,
+        "buffer_size": 200000,
+        "learning_starts": 3349,
+        "batch_size": 512,
+        "tau": 0.04446723478899075,
+        "gamma": 0.9772076790399048,
+        "train_freq": 1,
+        "gradient_steps": 1,
+        "noise_sigma": 0.03942674743114931,
+        "w1": 0.21587544227701394,
+        "w2": 0.5050615838462187,
+        "w3": 0.3251312719844981
+      },
+      "state": "TrialState.COMPLETE"
+    },
+    {
+      "number": 10,
+      "value": 693.52112355,
+      "params": {
+        "learning_rate": 0.0018955717279470806,
+        "buffer_size": 200000,
+        "learning_starts": 1541,
+        "batch_size": 64,
+        "tau": 0.04859744886520792,
+        "gamma": 0.9535534469093793,
+        "train_freq": 2,
+        "gradient_steps": 2,
+        "noise_sigma": 0.020000577045974362,
+        "w1": 0.2980906663650842,
+        "w2": 1.3589265637486658,
+        "w3": 0.4367113174423141
+      },
+      "state": "TrialState.COMPLETE"
+    },
+    {
+      "number": 11,
+      "value": 691.2172269,
+      "params": {
+        "learning_rate": 0.0025136480831858227,
+        "buffer_size": 200000,
+        "learning_starts": 1626,
+        "batch_size": 64,
+        "tau": 0.0496994230264446,
+        "gamma": 0.9531270958567083,
+        "train_freq": 2,
+        "gradient_steps": 2,
+        "noise_sigma": 0.02871843145905525,
+        "w1": 0.2996663292630933,
+        "w2": 1.422848252147139,
+        "w3": 0.48427896259547326
+      },
+      "state": "TrialState.COMPLETE"
+    },
+    {
+      "number": 12,
+      "value": 684.0685843,
+      "params": {
+        "learning_rate": 0.0026338129691932423,
+        "buffer_size": 200000,
+        "learning_starts": 537,
+        "batch_size": 64,
+        "tau": 0.04955222610533046,
+        "gamma": 0.949797236653992,
+        "train_freq": 2,
+        "gradient_steps": 2,
+        "noise_sigma": 0.017409353495057622,
+        "w1": 0.2991242649050934,
+        "w2": 1.4720967930603797,
+        "w3": 0.534052117947842
+      },
+      "state": "TrialState.COMPLETE"
+    },
+    {
+      "number": 13,
+      "value": 735.8917642500002,
+      "params": {
+        "learning_rate": 0.0016159545882846935,
+        "buffer_size": 200000,
+        "learning_starts": 1900,
+        "batch_size": 64,
+        "tau": 0.04997412717576668,
+        "gamma": 0.9365176496565469,
+        "train_freq": 2,
+        "gradient_steps": 2,
+        "noise_sigma": 0.06833216861272455,
+        "w1": 0.29653348978983085,
+        "w2": 1.4638015734829863,
+        "w3": 0.5297196296466598
+      },
+      "state": "TrialState.COMPLETE"
+    },
+    {
+      "number": 14,
+      "value": 648.8163281499999,
+      "params": {
+        "learning_rate": 0.0013369824662416107,
+        "buffer_size": 200000,
+        "learning_starts": 2314,
+        "batch_size": 64,
+        "tau": 0.042080667136684125,
+        "gamma": 0.9281178045363501,
+        "train_freq": 2,
+        "gradient_steps": 2,
+        "noise_sigma": 0.07435338550207575,
+        "w1": 0.25901820369422557,
+        "w2": 1.2864703713656407,
+        "w3": 0.14259295333693134
+      },
+      "state": "TrialState.COMPLETE"
+    },
+    {
+      "number": 15,
+      "value": 471.82733500000006,
+      "params": {
+        "learning_rate": 0.008772836394476591,
+        "buffer_size": 200000,
+        "learning_starts": 3291,
+        "batch_size": 64,
+        "tau": 0.04422401619533193,
+        "gamma": 0.9358930773396757,
+        "train_freq": 2,
+        "gradient_steps": 2,
+        "noise_sigma": 0.07400180325750344,
+        "w1": 0.21590682221001617,
+        "w2": 1.237492794934698,
+        "w3": 0.5986406300857802
+      },
+      "state": "TrialState.COMPLETE"
+    },
+    {
+      "number": 16,
+      "value": 631.40766585,
+      "params": {
+        "learning_rate": 0.001605000187899343,
+        "buffer_size": 200000,
+        "learning_starts": 1246,
+        "batch_size": 64,
+        "tau": 0.021301223648184556,
+        "gamma": 0.9649483396077321,
+        "train_freq": 1,
+        "gradient_steps": 4,
+        "noise_sigma": 0.14003911837736516,
+        "w1": 0.27193627856433045,
+        "w2": 1.2794282023116785,
+        "w3": 0.36917606435817385
+      },
+      "state": "TrialState.COMPLETE"
+    },
+    {
+      "number": 17,
+      "value": 384.70058165,
+      "params": {
+        "learning_rate": 0.005544124468020529,
+        "buffer_size": 200000,
+        "learning_starts": 2149,
+        "batch_size": 128,
+        "tau": 0.009309494939999843,
+        "gamma": 0.9346544607359745,
+        "train_freq": 2,
+        "gradient_steps": 2,
+        "noise_sigma": 0.29890536147752106,
+        "w1": 0.19118260063278256,
+        "w2": 1.1531683002316433,
+        "w3": 1.141008466058244
+      },
+      "state": "TrialState.COMPLETE"
+    },
+    {
+      "number": 18,
+      "value": 504.6580449,
+      "params": {
+        "learning_rate": 0.00248996521499445,
+        "buffer_size": 200000,
+        "learning_starts": 2723,
+        "batch_size": 64,
+        "tau": 0.039407863688721484,
+        "gamma": 0.9591074228289046,
+        "train_freq": 2,
+        "gradient_steps": 2,
+        "noise_sigma": 0.06630066756928918,
+        "w1": 0.23240335510308138,
+        "w2": 1.3609166582310266,
+        "w3": 0.6712090702082114
+      },
+      "state": "TrialState.COMPLETE"
+    },
+    {
+      "number": 19,
+      "value": 46.3150319,
+      "params": {
+        "learning_rate": 0.000782613722857236,
+        "buffer_size": 50000,
+        "learning_starts": 1175,
+        "batch_size": 64,
+        "tau": 0.04961402628956491,
+        "gamma": 0.9410462107853675,
+        "train_freq": 2,
+        "gradient_steps": 4,
+        "noise_sigma": 0.12939644545789797,
+        "w1": 0.05718430465069159,
+        "w2": 1.4827684441673252,
+        "w3": 0.4775978387099735
+      },
+      "state": "TrialState.COMPLETE"
+    },
+    {
+      "number": 20,
+      "value": 674.6103009,
+      "params": {
+        "learning_rate": 0.0015176239519995433,
+        "buffer_size": 200000,
+        "learning_starts": 1734,
+        "batch_size": 64,
+        "tau": 0.025451459651671168,
+        "gamma": 0.9241074911485182,
+        "train_freq": 1,
+        "gradient_steps": 2,
+        "noise_sigma": 0.012233083895847287,
+        "w1": 0.2822341401369313,
+        "w2": 1.15548664902201,
+        "w3": 0.2215424757929263
+      },
+      "state": "TrialState.COMPLETE"
+    },
+    {
+      "number": 21,
+      "value": 679.70250305,
+      "params": {
+        "learning_rate": 0.002483064564925181,
+        "buffer_size": 200000,
+        "learning_starts": 1640,
+        "batch_size": 64,
+        "tau": 0.047013975702764575,
+        "gamma": 0.9646102377952911,
+        "train_freq": 2,
+        "gradient_steps": 2,
+        "noise_sigma": 0.048286806219970155,
+        "w1": 0.2942675629967137,
+        "w2": 1.3916152666855914,
+        "w3": 0.4637968453973206
+      },
+      "state": "TrialState.COMPLETE"
+    },
+    {
+      "number": 22,
+      "value": 544.8537502500001,
+      "params": {
+        "learning_rate": 0.004100689878567158,
+        "buffer_size": 200000,
+        "learning_starts": 1472,
+        "batch_size": 64,
+        "tau": 0.04020129795416394,
+        "gamma": 0.9418092647503836,
+        "train_freq": 2,
+        "gradient_steps": 2,
+        "noise_sigma": 0.014719770384014513,
+        "w1": 0.2465165183902624,
+        "w2": 1.3883551244611276,
+        "w3": 0.5898014180366543
+      },
+      "state": "TrialState.COMPLETE"
+    },
+    {
+      "number": 23,
+      "value": 647.7463297500001,
+      "params": {
+        "learning_rate": 0.002024604622681382,
+        "buffer_size": 200000,
+        "learning_starts": 1997,
+        "batch_size": 64,
+        "tau": 0.04982181988827463,
+        "gamma": 0.9595603862089306,
+        "train_freq": 2,
+        "gradient_steps": 2,
+        "noise_sigma": 0.05371311406002812,
+        "w1": 0.2818047922323662,
+        "w2": 1.477618596355739,
+        "w3": 0.3074581478877653
+      },
+      "state": "TrialState.COMPLETE"
+    },
+    {
+      "number": 24,
+      "value": 746.5931630500002,
+      "params": {
+        "learning_rate": 0.0009937497857332683,
+        "buffer_size": 200000,
+        "learning_starts": 782,
+        "batch_size": 128,
+        "tau": 0.04535675080799491,
+        "gamma": 0.9517940947726817,
+        "train_freq": 2,
+        "gradient_steps": 2,
+        "noise_sigma": 0.032907859053932405,
+        "w1": 0.29415505997733654,
+        "w2": 1.3538116981236032,
+        "w3": 0.45019438626763114
+      },
+      "state": "TrialState.COMPLETE"
+    },
+    {
+      "number": 25,
+      "value": 593.0722256500001,
+      "params": {
+        "learning_rate": 0.0008936498492771244,
+        "buffer_size": 200000,
+        "learning_starts": 625,
+        "batch_size": 128,
+        "tau": 0.04472612492815148,
+        "gamma": 0.9126045972690983,
+        "train_freq": 2,
+        "gradient_steps": 2,
+        "noise_sigma": 0.08570286378944011,
+        "w1": 0.23714909718258037,
+        "w2": 1.2003393281322479,
+        "w3": 0.7232810598404793
+      },
+      "state": "TrialState.COMPLETE"
+    },
+    {
+      "number": 26,
+      "value": 682.0421717,
+      "params": {
+        "learning_rate": 0.0012197348472191701,
+        "buffer_size": 200000,
+        "learning_starts": 942,
+        "batch_size": 128,
+        "tau": 0.03619335296559031,
+        "gamma": 0.94407885301545,
+        "train_freq": 2,
+        "gradient_steps": 2,
+        "noise_sigma": 0.12305545236510305,
+        "w1": 0.27170041029506664,
+        "w2": 1.3305108370541523,
+        "w3": 0.4141774066723764
+      },
+      "state": "TrialState.COMPLETE"
+    },
+    {
+      "number": 27,
+      "value": 704.2939777500001,
+      "params": {
+        "learning_rate": 0.0007054737281915482,
+        "buffer_size": 200000,
+        "learning_starts": 895,
+        "batch_size": 128,
+        "tau": 0.0455990061221386,
+        "gamma": 0.9307368177896839,
+        "train_freq": 2,
+        "gradient_steps": 2,
+        "noise_sigma": 0.05723997359282103,
+        "w1": 0.27845689132783774,
+        "w2": 1.3127803301083263,
+        "w3": 0.2542589172467677
+      },
+      "state": "TrialState.COMPLETE"
+    },
+    {
+      "number": 28,
+      "value": 699.63284585,
+      "params": {
+        "learning_rate": 0.0006679465655755563,
+        "buffer_size": 100000,
+        "learning_starts": 851,
+        "batch_size": 128,
+        "tau": 0.04383299399314659,
+        "gamma": 0.9267136010001352,
+        "train_freq": 2,
+        "gradient_steps": 4,
+        "noise_sigma": 0.054415971908518324,
+        "w1": 0.2708674826757959,
+        "w2": 1.0926025517038351,
+        "w3": 0.26227437624824307
+      },
+      "state": "TrialState.COMPLETE"
+    },
+    {
+      "number": 29,
+      "value": 592.4296468,
+      "params": {
+        "learning_rate": 0.0005301506411688119,
+        "buffer_size": 50000,
+        "learning_starts": 1185,
+        "batch_size": 128,
+        "tau": 0.036108333207878124,
+        "gamma": 0.9033871763914119,
+        "train_freq": 1,
+        "gradient_steps": 1,
+        "noise_sigma": 0.15659543171309726,
+        "w1": 0.2286659314503519,
+        "w2": 0.9266912290572605,
+        "w3": 0.15160978534709818
+      },
+      "state": "TrialState.COMPLETE"
+    },
+    {
+      "number": 30,
+      "value": 437.77918014999995,
+      "params": {
+        "learning_rate": 0.0010943636588418822,
+        "buffer_size": 50000,
+        "learning_starts": 4994,
+        "batch_size": 128,
+        "tau": 0.037850909787130974,
+        "gamma": 0.920120264076946,
+        "train_freq": 1,
+        "gradient_steps": 4,
+        "noise_sigma": 0.0642179946809513,
+        "w1": 0.18703612060560298,
+        "w2": 1.2956726761745823,
+        "w3": 0.9088408775410284
+      },
+      "state": "TrialState.COMPLETE"
+    },
+    {
+      "number": 31,
+      "value": 712.4646866,
+      "params": {
+        "learning_rate": 0.000638499324872731,
+        "buffer_size": 100000,
+        "learning_starts": 861,
+        "batch_size": 128,
+        "tau": 0.04237496765278,
+        "gamma": 0.9307492084680389,
+        "train_freq": 2,
+        "gradient_steps": 4,
+        "noise_sigma": 0.04986034722543747,
+        "w1": 0.2750386045057325,
+        "w2": 1.0955728547869166,
+        "w3": 0.2655555423842706
+      },
+      "state": "TrialState.COMPLETE"
+    },
+    {
+      "number": 32,
+      "value": 719.04977225,
+      "params": {
+        "learning_rate": 0.0003939918409169916,
+        "buffer_size": 100000,
+        "learning_starts": 503,
+        "batch_size": 128,
+        "tau": 0.045932459793381494,
+        "gamma": 0.9325041624865614,
+        "train_freq": 2,
+        "gradient_steps": 4,
+        "noise_sigma": 0.04022465367194268,
+        "w1": 0.28048281982768297,
+        "w2": 1.196866024844278,
+        "w3": 0.2624880349169976
+      },
+      "state": "TrialState.COMPLETE"
+    },
+    {
+      "number": 33,
+      "value": 622.54978885,
+      "params": {
+        "learning_rate": 0.0003051311818893162,
+        "buffer_size": 100000,
+        "learning_starts": 530,
+        "batch_size": 128,
+        "tau": 0.042095594660543155,
+        "gamma": 0.9087751928806392,
+        "train_freq": 2,
+        "gradient_steps": 4,
+        "noise_sigma": 0.08695951128240019,
+        "w1": 0.2474304827313874,
+        "w2": 1.2074539022665434,
+        "w3": 0.10659053069660149
+      },
+      "state": "TrialState.COMPLETE"
+    },
+    {
+      "number": 34,
+      "value": 750.7526092,
+      "params": {
+        "learning_rate": 0.00040553726469365667,
+        "buffer_size": 100000,
+        "learning_starts": 1197,
+        "batch_size": 128,
+        "tau": 0.042144831179681354,
+        "gamma": 0.9448396116959287,
+        "train_freq": 4,
+        "gradient_steps": 4,
+        "noise_sigma": 0.1800272500043215,
+        "w1": 0.28352592711137725,
+        "w2": 0.9064684108508917,
+        "w3": 0.5690895677334733
+      },
+      "state": "TrialState.COMPLETE"
+    },
+    {
+      "number": 35,
+      "value": 748.7636443,
+      "params": {
+        "learning_rate": 0.00020226075593559426,
+        "buffer_size": 100000,
+        "learning_starts": 1345,
+        "batch_size": 128,
+        "tau": 0.046694688542211885,
+        "gamma": 0.9452251489609953,
+        "train_freq": 4,
+        "gradient_steps": 4,
+        "noise_sigma": 0.17321107613151296,
+        "w1": 0.28471510187150145,
+        "w2": 0.956642906480035,
+        "w3": 0.5916902396195091
+      },
+      "state": "TrialState.COMPLETE"
+    },
+    {
+      "number": 36,
+      "value": 390.2926229,
+      "params": {
+        "learning_rate": 0.00022171218104842614,
+        "buffer_size": 100000,
+        "learning_starts": 1263,
+        "batch_size": 256,
+        "tau": 0.028035121520979617,
+        "gamma": 0.942696454775343,
+        "train_freq": 4,
+        "gradient_steps": 4,
+        "noise_sigma": 0.22438402268252516,
+        "w1": 0.16014293640952343,
+        "w2": 0.9110348531173902,
+        "w3": 0.6125999283305014
+      },
+      "state": "TrialState.COMPLETE"
+    },
+    {
+      "number": 37,
+      "value": 619.1635008999999,
+      "params": {
+        "learning_rate": 0.00016834584426966172,
+        "buffer_size": 100000,
+        "learning_starts": 2613,
+        "batch_size": 128,
+        "tau": 0.040108492016158376,
+        "gamma": 0.9468458032416012,
+        "train_freq": 4,
+        "gradient_steps": 4,
+        "noise_sigma": 0.17435808904004932,
+        "w1": 0.26072334474226977,
+        "w2": 0.7056145082946851,
+        "w3": 0.795313661643318
+      },
+      "state": "TrialState.COMPLETE"
+    },
+    {
+      "number": 38,
+      "value": 206.82348635,
+      "params": {
+        "learning_rate": 0.00021859830154463182,
+        "buffer_size": 100000,
+        "learning_starts": 1901,
+        "batch_size": 128,
+        "tau": 0.03221513935314893,
+        "gamma": 0.9584914309669185,
+        "train_freq": 4,
+        "gradient_steps": 4,
+        "noise_sigma": 0.17856708017048248,
+        "w1": 0.09703140878717824,
+        "w2": 0.9140980984355747,
+        "w3": 1.0474764136767114
+      },
+      "state": "TrialState.COMPLETE"
+    },
+    {
+      "number": 39,
+      "value": 763.7549883500001,
+      "params": {
+        "learning_rate": 0.00016287132547688398,
+        "buffer_size": 100000,
+        "learning_starts": 1382,
+        "batch_size": 256,
+        "tau": 0.00954884636507539,
+        "gamma": 0.9365082194487965,
+        "train_freq": 4,
+        "gradient_steps": 4,
+        "noise_sigma": 0.21471776231684303,
+        "w1": 0.2902515022905234,
+        "w2": 0.9976986026487508,
+        "w3": 0.5350099930250677
+      },
+      "state": "TrialState.COMPLETE"
+    },
+    {
+      "number": 40,
+      "value": 241.24631895,
+      "params": {
+        "learning_rate": 0.0001008178742176833,
+        "buffer_size": 100000,
+        "learning_starts": 1039,
+        "batch_size": 256,
+        "tau": 0.0049351342318799465,
+        "gamma": 0.9692744907411218,
+        "train_freq": 4,
+        "gradient_steps": 4,
+        "noise_sigma": 0.2241400701868967,
+        "w1": 0.14000195936565862,
+        "w2": 0.9840108899734975,
+        "w3": 1.485416367470359
+      },
+      "state": "TrialState.COMPLETE"
+    },
+    {
+      "number": 41,
+      "value": 772.7202950999999,
+      "params": {
+        "learning_rate": 0.0001668700250128931,
+        "buffer_size": 100000,
+        "learning_starts": 1383,
+        "batch_size": 256,
+        "tau": 0.013131033924474357,
+        "gamma": 0.9390844837482606,
+        "train_freq": 4,
+        "gradient_steps": 4,
+        "noise_sigma": 0.22095454001174636,
+        "w1": 0.28923275418638306,
+        "w2": 0.8554275558814598,
+        "w3": 0.5387222031616928
+      },
+      "state": "TrialState.COMPLETE"
+    },
+    {
+      "number": 42,
+      "value": 768.5674008500001,
+      "params": {
+        "learning_rate": 0.000167139897560221,
+        "buffer_size": 100000,
+        "learning_starts": 1360,
+        "batch_size": 256,
+        "tau": 0.013088833011037174,
+        "gamma": 0.9470806123706415,
+        "train_freq": 4,
+        "gradient_steps": 4,
+        "noise_sigma": 0.24641793983937238,
+        "w1": 0.2883626438270271,
+        "w2": 0.8645130087769516,
+        "w3": 0.6921458561847819
+      },
+      "state": "TrialState.COMPLETE"
+    },
+    {
+      "number": 43,
+      "value": 694.5681612,
+      "params": {
+        "learning_rate": 0.00015800687188779588,
+        "buffer_size": 100000,
+        "learning_starts": 1327,
+        "batch_size": 256,
+        "tau": 0.013153685081455244,
+        "gamma": 0.9387210705421121,
+        "train_freq": 4,
+        "gradient_steps": 4,
+        "noise_sigma": 0.25930345932906357,
+        "w1": 0.26248888385258384,
+        "w2": 0.8497389506131852,
+        "w3": 0.7120126359613904
+      },
+      "state": "TrialState.COMPLETE"
+    },
+    {
+      "number": 44,
+      "value": 772.8051277,
+      "params": {
+        "learning_rate": 0.00013227826309752003,
+        "buffer_size": 100000,
+        "learning_starts": 1412,
+        "batch_size": 256,
+        "tau": 0.011983811059467516,
+        "gamma": 0.9476380876376114,
+        "train_freq": 4,
+        "gradient_steps": 4,
+        "noise_sigma": 0.24062644301430192,
+        "w1": 0.2870305220824384,
+        "w2": 0.7676708054005131,
+        "w3": 0.6508416762544583
+      },
+      "state": "TrialState.COMPLETE"
+    },
+    {
+      "number": 45,
+      "value": 561.76833445,
+      "params": {
+        "learning_rate": 0.00013446168420144555,
+        "buffer_size": 100000,
+        "learning_starts": 1764,
+        "batch_size": 256,
+        "tau": 0.011836994497215059,
+        "gamma": 0.9465272037560526,
+        "train_freq": 4,
+        "gradient_steps": 4,
+        "noise_sigma": 0.2559502766706882,
+        "w1": 0.2397867438002254,
+        "w2": 0.739915846269869,
+        "w3": 0.7644162956286948
+      },
+      "state": "TrialState.COMPLETE"
+    },
+    {
+      "number": 46,
+      "value": 783.4901988000001,
+      "params": {
+        "learning_rate": 0.00040184814723675876,
+        "buffer_size": 100000,
+        "learning_starts": 2173,
+        "batch_size": 256,
+        "tau": 0.006554611989564873,
+        "gamma": 0.9554116968850899,
+        "train_freq": 4,
+        "gradient_steps": 4,
+        "noise_sigma": 0.24070283641855783,
+        "w1": 0.28668748927739673,
+        "w2": 0.650396582494094,
+        "w3": 0.8613609563753646
+      },
+      "state": "TrialState.COMPLETE"
+    },
+    {
+      "number": 47,
+      "value": 717.7589282,
+      "params": {
+        "learning_rate": 0.0002527642782964805,
+        "buffer_size": 100000,
+        "learning_starts": 2179,
+        "batch_size": 256,
+        "tau": 0.00388742312778694,
+        "gamma": 0.9546352796324955,
+        "train_freq": 4,
+        "gradient_steps": 4,
+        "noise_sigma": 0.2412883817679864,
+        "w1": 0.2651502463556484,
+        "w2": 0.6522617193234195,
+        "w3": 0.8463962343305725
+      },
+      "state": "TrialState.COMPLETE"
+    },
+    {
+      "number": 48,
+      "value": 599.4778907499999,
+      "params": {
+        "learning_rate": 0.00013718712575060807,
+        "buffer_size": 100000,
+        "learning_starts": 3147,
+        "batch_size": 256,
+        "tau": 0.01624903924294835,
+        "gamma": 0.9987183531142907,
+        "train_freq": 4,
+        "gradient_steps": 1,
+        "noise_sigma": 0.29391172516884273,
+        "w1": 0.2533902956948155,
+        "w2": 0.7916091192448627,
+        "w3": 0.6722195662362686
+      },
+      "state": "TrialState.COMPLETE"
+    },
+    {
+      "number": 49,
+      "value": 596.999197,
+      "params": {
+        "learning_rate": 0.00016101098640112113,
+        "buffer_size": 100000,
+        "learning_starts": 2460,
+        "batch_size": 256,
+        "tau": 0.007808790599470656,
+        "gamma": 0.9560866448559592,
+        "train_freq": 4,
+        "gradient_steps": 4,
+        "noise_sigma": 0.27579666567594574,
+        "w1": 0.22186987489574575,
+        "w2": 0.5559564784594306,
+        "w3": 0.8986196252164818
+      },
+      "state": "TrialState.COMPLETE"
+    }
+  ]
+}

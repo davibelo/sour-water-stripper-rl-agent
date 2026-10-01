@@ -1,0 +1,11 @@
+{
+  "run_dir": "c:\\Users\\davib\\Downloads\\Pesquisa\\06-agentRL-PPO\\models\\PPO_rewardA_01_20260303_103831",
+  "reward_type": "A",
+  "n_episodes": 20,
+  "return_mean": 120.43849798273295,
+  "return_std": 30.128059313048166,
+  "final_qreb_mean": 2.592626585711112,
+  "final_qreb_std": 0.12131329517705651,
+  "final_deltaT_mean": 105.01373629412521,
+  "final_deltaT_std": 1.1827066057508293
+}

@@ -1,0 +1,11 @@
+{
+  "run_dir": "c:\\Users\\davib\\Downloads\\Pesquisa\\08-agentRL-DDPG\\models\\DDPG_rewardA_01_20260325_121746",
+  "reward_type": "A",
+  "n_episodes": 20,
+  "return_mean": 218.32684734091163,
+  "return_std": 42.0716068220993,
+  "final_qreb_mean": 2.6262631334106823,
+  "final_qreb_std": 0.12561055316654196,
+  "final_deltaT_mean": 105.20940705305433,
+  "final_deltaT_std": 1.1674964752724721
+}

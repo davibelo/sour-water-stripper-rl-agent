@@ -1,0 +1,4 @@
+Usar min/max scaling para normalizar os dados de entrada antes do treinamento conforme 
+inputs = [Qfeed, Tfeed, cH2S, cNH3, Qreb, Pcolumn, Ecolumn]
+mins = [47500, 118.95,  875,  750, 2.0, 5.7, 66.5]
+maxs = [52500, 125.05, 3500, 3000, 4.8, 6.3, 73.5]

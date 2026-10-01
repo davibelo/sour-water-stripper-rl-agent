@@ -1,0 +1,32 @@
+
+ENTRADAS
+o que eu preciso variar para cada caso de estudo.. 
+o que vai ser variável perturbação 
+SAIDAS
+o que está na funcao de recompensa
+
+ENTRADAS
+Vazao da carga | Qfeed | 47500 a 52500 kg/h
+Temperatura da carga | Tfeed | 118.95 a 125.05 oC
+Concentração de H2S na alimentação | cH2Sfeed | 875 a 3500 ppm
+Concentração de NH3 na alimentação | cNH3feed | 750 a 3000 ppm
+Carga térmica no refervedor | Qreb | 2 a 4.8 Gcal/h
+
+
+SAIDAS
+Temperatura de fundo | Tbottom | 143 a 161 oC 
+Temperatura de topo | Ttop | 60 a 159 oC
+
+
+DISTÚRBIOS NÃO MEDIDOS
+Pressão da coluna | Pcolumn | 5.7 a 6.3 kgf/cm²m
+Eficiência de Murphree da coluna | Ecolumn | 66.5 a 73.5%
+
+
+
+Altere o script de simulação para somente salvar os resultados se o valor do node r"\Data\Results Summary\Run-Status\Output\PER_ERROR" for = 0
+Caso não seja, escreva no log que houve erro de convergência e o texto resultado da concatenação dos valores dos nodes abaixo:
+r"\Data\Results Summary\Run-Status\Output\PER_ERROR\1", 
+r"\Data\Results Summary\Run-Status\Output\PER_ERROR\2", 
+r"\Data\Results Summary\Run-Status\Output\PER_ERROR\3", etc
+A quantidade de desses nodes com números, vai depender do número de linhas de texto explicando o erro, então você precisa ir lendo sequencialmente 1,2,3, etc até não existir mais esses nós com numerais

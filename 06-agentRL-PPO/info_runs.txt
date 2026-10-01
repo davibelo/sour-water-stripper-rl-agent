@@ -1,0 +1,103 @@
+- RUN: 01
+- DATA_ID: 04
+- MODEL_ID: 02b
+
+- Rewards:
+
+REWARD_TYPES = ["A"]
+REWARD_WEIGHTS_A = {
+    "w1": 0.07,
+    "w2": 0.9,
+    "w3": 1.2,
+}
+REWARD_EPSILON_B = 1e-3
+
+- Delta_Qreb_max and Resets:
+
+DELTA_QREB_MAX = 0.3
+QREB_INIT_1 = QREB_MIN
+QREB_INIT_2 = QREB_MIN + 0.33 * (QREB_MAX - QREB_MIN)
+QREB_INIT_3 = QREB_MIN + 0.67 * (QREB_MAX - QREB_MIN)
+QREB_INIT_4 = QREB_MAX
+
+- Comentário:
+
+xxx--------------------xxx
+
+- RUN: 02
+- DATA_ID: 04
+- MODEL_ID: 02b
+
+- Rewards:
+
+REWARD_TYPES = ["A"]
+REWARD_WEIGHTS_A = {
+    "w1": 0.07,
+    "w2": 0.9,
+    "w3": 0.6,
+}
+REWARD_EPSILON_B = 1e-3
+
+- Delta_Qreb_max and Resets:
+
+DELTA_QREB_MAX = 0.3
+QREB_INIT_1 = QREB_MIN
+QREB_INIT_2 = QREB_MIN + 0.33 * (QREB_MAX - QREB_MIN)
+QREB_INIT_3 = QREB_MIN + 0.67 * (QREB_MAX - QREB_MIN)
+QREB_INIT_4 = QREB_MAX
+
+- Comentário:
+
+xxx--------------------xxx
+
+- RUN: 03
+- DATA_ID: 04
+- MODEL_ID: 02b
+
+- Rewards:
+
+REWARD_TYPES = ["A"]
+REWARD_WEIGHTS_A = {
+    "w1": 0.07,
+    "w2": 0.9,
+    "w3": 0.9,
+}
+REWARD_EPSILON_B = 1e-3
+
+- Delta_Qreb_max and Resets:
+
+DELTA_QREB_MAX = 0.3
+QREB_INIT_1 = QREB_MIN
+QREB_INIT_2 = QREB_MIN + 0.33 * (QREB_MAX - QREB_MIN)
+QREB_INIT_3 = QREB_MIN + 0.67 * (QREB_MAX - QREB_MIN)
+QREB_INIT_4 = QREB_MAX
+
+- Comentário:
+
+xxx--------------------xxx
+
+- RUN: 04
+- DATA_ID: 04
+- MODEL_ID: 02b
+
+- Rewards:
+
+REWARD_TYPES = ["A"]
+REWARD_WEIGHTS_A = {
+    "w1": 0.105,
+    "w2": 0.9,
+    "w3": 0.6,
+}
+REWARD_EPSILON_B = 1e-3
+
+- Delta_Qreb_max and Resets:
+
+DELTA_QREB_MAX = 0.3
+QREB_INIT_1 = QREB_MIN
+QREB_INIT_2 = QREB_MIN + 0.33 * (QREB_MAX - QREB_MIN)
+QREB_INIT_3 = QREB_MIN + 0.67 * (QREB_MAX - QREB_MIN)
+QREB_INIT_4 = QREB_MAX
+
+- Comentário:
+
+xxx--------------------xxx

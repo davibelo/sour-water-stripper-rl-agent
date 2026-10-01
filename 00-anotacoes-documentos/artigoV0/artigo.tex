@@ -1,0 +1,431 @@
+\documentclass[journal,10pt,twocolumn]{IEEEtran}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{textcomp}
+\usepackage[english]{babel}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage{multirow}
+\usepackage{array}
+\usepackage{xcolor}
+\usepackage{hyperref}
+\usepackage{cite}
+\usepackage{siunitx}
+
+\hypersetup{
+    colorlinks=true,
+    linkcolor=blue,
+    citecolor=blue,
+    urlcolor=blue
+}
+
+% -------------------------------------------------------------------
+\begin{document}
+
+\title{Reinforcement Learning Agent for Optimization of an H\textsubscript{2}S Stripper Column}
+
+\author{%
+  \IEEEauthorblockN{Francisco Davi Belo Rodrigues}
+  \IEEEauthorblockA{EPQB/EQ - Universidade Federal do Rio de Janeiro, Rio de Janeiro, Brasilr}
+  \and
+  \IEEEauthorblockN{Maurício B. de Souza Jr.}
+  \IEEEauthorblockA{EPQB/EQ - Universidade Federal do Rio de Janeiro, Rio de Janeiro, Brasil}
+  \and
+  \IEEEauthorblockN{Príamo Albuquerque Melo}
+  \IEEEauthorblockA{PEQ/COPPE - Universidade Federal do Rio de Janeiro, Rio de Janeiro, Brasil}
+}
+
+\maketitle
+
+% -------------------------------------------------------------------
+\begin{abstract}
+This paper presents a reinforcement learning (RL) agent for optimizing the recovery of H\textsubscript{2}S/NH\textsubscript{3} on an sour water stripper column without direct concentration measurements. Two actor–critic algorithms, Proximal Policy Optimization (PPO) and Deep Deterministic Policy Gradient (DDPG), are trained inside a deep neural network (DNN) surrogate environment built from Aspen-simulated data sampled via Latin Hypercube Sampling (LHS). Hyperparameters and reward weights are jointly optimized using Optuna Bayesian optimization (50 trials each). The formulation is cast as a Partially Observable Markov Decision Process (POMDP), making feed concentration and Murphree efficiency latent variables unknown to the agent. Validation against a static Aspen simulation shows that both agents achieves H\textsubscript{2}S recoveries above xxxx. PPO reaches a mean H\textsubscript{2}S recovery of \SI{99.98}{\percent} with xxx Aspen convergence iterations per episode, whereas DDPG-Opt achieves \SI{99.86}{\percent} at xxx iterations. Results confirm that surrogate-trained RL with Optuna tuning is a practical and computationally efficient approach for industrial process optimization without on-line composition analyzers.
+\end{abstract}
+
+\begin{IEEEkeywords}
+Reinforcement learning, process optimization, surrogate model, Sour Water, H\textsubscript{2}S stripping, Optuna, PPO, DDPG, POMDP.
+\end{IEEEkeywords}
+
+% -------------------------------------------------------------------
+\section{Introduction}
+\label{sec:intro}
+
+Sour-water stripper columns in petroleum refining remove hydrogen sulfide (H\textsubscript{2}S) and ammonia (NH\textsubscript{3}) from process water, generating overhead streams suitable for recovery or thermal destruction in sulfur-recovery units. Efficient operation requires maintaining the reboiler duty~$\dot{Q}_\text{reb}$ near the so-called \emph{operational knee-point}: the region where incremental energy input yields diminishing returns in stripping efficiency. Operating below this point leaves contaminants in the stripped water; operating above it wastes energy and may violate hydraulic constraints.
+
+On-line H\textsubscript{2}S and NH\textsubscript{3} analyzers are expensive, require intensive maintenance, and are often unavailable in practice. Operators therefore rely on indirect temperature indicators---bottom temperature $T_\text{bottom}$ and top temperature $T_\text{top}$---to infer column performance, adjusting $\dot{Q}_\text{reb}$ empirically. This manual, reactive strategy rarely achieves the optimum and is sensitive to unmeasured disturbances such as changes in feed loading, column pressure, or tray efficiency.
+
+Reinforcement learning has emerged as a promising approach for process optimization, particularly when the optimal operating policy is difficult to express analytically~\cite{mnih2015human,lillicrap2015continuous,schulman2017proximal}. RL agents learn by interacting with a simulated environment and can naturally handle nonlinear, time-varying processes. A key practical barrier, however, is the computational cost of process simulation; rigorous simulators may require minutes per steady-state evaluation, making the millions of interactions typical of RL training prohibitive.
+
+Surrogate models---fast approximations of high-fidelity simulators---address this bottleneck~\cite{bhosekar2018advances,kim2020surrogate}. Deep neural network (DNN) surrogates trained on simulation data can be queried in microseconds, enabling intensive RL training at negligible computational cost. The policy can then be validated against the rigorous simulator to quantify model bias.
+
+This work makes the following contributions:
+\begin{itemize}
+  \item A POMDP formulation of the knee-point optimization problem in which feed concentrations and Murphree tray efficiency are treated as latent (unmeasured) variables, forcing the agent to learn a robust policy;
+  \item A two-model DNN surrogate for steady-state prediction of $T_\text{bottom}$ and $T_\text{top}$, trained on 700 LHS-sampled Aspen simulations;
+  \item Joint Bayesian optimization of RL hyperparameters and reward weights using Optuna, applied to both PPO and DDPG;
+  \item Static Aspen validation of the trained policies, reporting H\textsubscript{2}S recovery, NH\textsubscript{3} loss, and convergence behavior across 30 episodes per agent.
+\end{itemize}
+
+% -------------------------------------------------------------------
+\section{Process Description}
+\label{sec:process}
+
+The system studied is a single-feed, single-reboiler sour-water stripper operating at approximately 6.0~kgf/cm\textsuperscript{2}g. The column receives a sour-water stream loaded with H\textsubscript{2}S (875--3500~ppm) and NH\textsubscript{3} (750--3000~ppm) at variable flow rates (47,500--52,500~kg/h) and temperatures (119--125~\textdegree C). Steam is supplied to the reboiler, which manipulates $\dot{Q}_\text{reb}$ to drive stripping. The overhead vapor is sent to downstream treatment; the bottoms product must meet H\textsubscript{2}S and NH\textsubscript{3} discharge specifications.
+
+The steady-state behavior of the column is described by the MESH equations implemented in Aspen Plus with Murphree tray efficiency. Tray efficiency $E_\text{column}$ is a global scalar applied uniformly to all trays; its value is uncertain and may drift over time due to fouling or changes in liquid distribution. Column pressure $P_\text{column}$ also varies within its normal operating band. These two parameters constitute the main sources of unmeasured process variability.
+
+The operational knee-point manifests as a change in the slope of the $T_\text{bottom}$-vs-$\dot{Q}_\text{reb}$ curve: below the knee, additional heat input produces a significant temperature increase indicating improved stripping; above it, the curve flattens as the column approaches thermodynamic saturation and energy is dissipated without proportional stripping benefit.
+
+% -------------------------------------------------------------------
+\section{Methodology}
+\label{sec:method}
+
+\subsection{DNN Surrogate Model}
+\label{ssec:surrogate}
+
+\subsubsection{Dataset Generation via LHS}
+A space-filling Latin Hypercube Sampling (LHS) design with a maximin criterion was used to generate 1000 candidate operating points in the seven-dimensional input space
+\[
+  \mathbf{x} = [Q_\text{feed},\, T_\text{feed},\, c_\mathrm{H_2S},\, c_\mathrm{NH_3},\, \dot{Q}_\text{reb},\, P_\text{column},\, E_\text{column}].
+\]
+Each point was simulated in Aspen Plus to steady-state convergence. Points that did not converge or violated hydraulic constraints were flagged as invalid (\texttt{valid}~=~0) and excluded from regression training. The final usable dataset comprised 1000 samples, split into 700 training, 150 validation, and 150 test samples.
+
+\subsubsection{Architecture and Training}
+Two independent feedforward DNN regressors were trained---one for $T_\text{bottom}$ and one for $T_\text{top}$---using Keras with TensorFlow. Hyperparameters (layer width, depth, learning rate, dropout, L2 regularization, batch size) were tuned via a separate Optuna study for each surrogate. All seven inputs were normalized to $[0, 1]$ using the min-max ranges of the dataset; outputs were normalized in the same manner and then denormalized during inference.
+
+Final surrogate architectures and performance metrics are reported in Table~\ref{tab:surrogate}.
+
+\begin{table}[h]
+  \centering
+  \caption{Surrogate DNN performance on the held-out test set.}
+  \label{tab:surrogate}
+  \begin{tabular}{lcc}
+    \toprule
+    Metric & $T_\text{bottom}$ model & $T_\text{top}$ model \\
+    \midrule
+    Hidden layers & 1 (224 neurons) & 2 (160+192 neurons) \\
+    Learning rate & $2.86\times10^{-3}$ & $9.24\times10^{-3}$ \\
+    Batch size & 16 & 16 \\
+    Dropout rate & 0.025 & 0.003 \\
+    Training epochs & 226 & 253 \\
+    RMSE (\textdegree C) & 0.0063 & 0.0111 \\
+    $R^2$ (validation) & 0.9992 & 0.9995 \\
+    $R^2$ (test) & 0.9992 & 0.9998 \\
+    \bottomrule
+  \end{tabular}
+\end{table}
+
+Both surrogates achieve $R^2 > 0.999$ on the test set, with RMSE below 0.012~\textdegree C, indicating accuracy well within the tolerance required for RL training.
+
+\subsection{Reinforcement Learning Formulation}
+\label{ssec:rl}
+
+\subsubsection{POMDP Formulation}
+The optimization problem is formulated as a Partially Observable Markov Decision Process (POMDP), since feed concentrations ($c_\mathrm{H_2S}$, $c_\mathrm{NH_3}$) and Murphree efficiency ($E_\text{column}$) affect the environment but are unavailable to the agent. The true environment state is
+\[
+  \mathbf{x}_t = [Q_\text{feed},\, T_\text{feed},\, c_\mathrm{H_2S},\, c_\mathrm{NH_3},\, \dot{Q}_\text{reb},\, P_\text{column},\, E_\text{column}],
+\]
+while the agent observation is restricted to the six measurable variables:
+\[
+  \mathbf{s}_t = [Q_\text{feed},\, T_\text{feed},\, \dot{Q}_\text{reb},\, P_\text{column},\, T_\text{bottom},\, T_\text{top}].
+\]
+
+\subsubsection{Action Space}
+The action is a continuous, incremental adjustment to the reboiler duty setpoint:
+\begin{equation}
+  a_t \in [-1,+1] \;\Rightarrow\; \Delta\dot{Q}_\text{reb} = a_t \times 0.3 \text{ Gcal/h},
+  \label{eq:action}
+\end{equation}
+with the updated setpoint clipped to the safe operating range:
+\begin{equation}
+  \dot{Q}_\text{reb}(t+1) = \text{clip}\!\left(\dot{Q}_\text{reb}(t) + \Delta\dot{Q}_\text{reb},\; 2.4,\; 6.0\right) \text{ Gcal/h}.
+  \label{eq:clip}
+\end{equation}
+The incremental formulation avoids abrupt setpoint changes, guarantees smooth trajectories, and allows the agent to traverse the full operating range in approximately 12 steps within a 30-step episode.
+
+\subsubsection{Reward Function}
+A single reward formulation (Reward~A) was adopted, combining three operational objectives:
+\begin{equation}
+  r_t = w_1 \cdot \left(\tilde{T}_\text{bottom} - \tilde{T}_\text{top}\right)
+        - w_2 \cdot \tilde{\dot{Q}}_\text{reb}
+        - w_3 \cdot \mathrm{Var}(T_\text{bottom}),
+  \label{eq:reward}
+\end{equation}
+where tilde notation denotes min-max normalization over the operating range, and $\mathrm{Var}(T_\text{bottom})$ is computed over a sliding window to penalize oscillation. A safety penalty of $-50$ is applied whenever $T_\text{bottom}$ or $T_\text{top}$ exceed their operating limits, and the episode is terminated. The weights $(w_1, w_2, w_3)$ are treated as hyperparameters and jointly optimized by Optuna.
+
+\subsubsection{Episode Initialization and Domain Randomization}
+Each training episode randomizes:
+\begin{itemize}
+  \item \emph{Observed disturbances}: $Q_\text{feed}$ and $T_\text{feed}$ drawn uniformly from their operating ranges;
+  \item \emph{Latent variables}: $c_\mathrm{H_2S}$, $c_\mathrm{NH_3}$, $E_\text{column}$ drawn uniformly, unseen by the agent;
+  \item \emph{Initial $\dot{Q}_\text{reb}$}: sampled from one of three bands (low, mid, high) with equal probability, forcing the agent to learn approach strategies from below and above the optimum.
+\end{itemize}
+
+\subsection{Actor-Critic Algorithms}
+\label{ssec:algorithms}
+
+\subsubsection{PPO (Proximal Policy Optimization)}
+PPO~\cite{schulman2017proximal} is an on-policy actor-critic algorithm that constrains policy updates via a clipped surrogate objective, providing stable learning without requiring precise step-size tuning. It is particularly well-suited to environments where sample efficiency is less critical than training stability.
+
+\subsubsection{DDPG (Deep Deterministic Policy Gradient)}
+DDPG~\cite{lillicrap2015continuous} is an off-policy algorithm that maintains a replay buffer and uses delayed target networks. Exploration is driven by Ornstein-Uhlenbeck noise added to the deterministic policy output. The off-policy nature allows higher sample efficiency but requires careful tuning of the noise level and learning rates.
+
+Both algorithms were implemented using the \texttt{stable-baselines3} library~\cite{sb3}.
+
+\subsection{Hyperparameter Optimization with Optuna}
+\label{ssec:optuna}
+
+Optuna~\cite{akiba2019optuna} was used to jointly optimize RL hyperparameters and reward weights through Tree-structured Parzen Estimator (TPE) sampling. The optimization protocol comprised two phases:
+\begin{enumerate}
+  \item \textbf{Search phase}: 50 independent trials, each training the agent for 150,000 timesteps; the objective is the mean episodic reward over the final evaluation episodes.
+  \item \textbf{Retraining phase}: the best-performing hyperparameter configuration is retrained from scratch for 500,000 timesteps.
+\end{enumerate}
+
+The search spaces are summarized in Tables~\ref{tab:ppo_space} and~\ref{tab:ddpg_space}.
+
+\begin{table}[h]
+  \centering
+  \caption{Optuna search space for PPO.}
+  \label{tab:ppo_space}
+  \begin{tabular}{lll}
+    \toprule
+    Parameter & Type & Range \\
+    \midrule
+    \texttt{learning\_rate} & log-float & $[10^{-5},\;10^{-3}]$ \\
+    \texttt{n\_steps}       & categorical & 512, 1024, 2048, 4096 \\
+    \texttt{batch\_size}    & categorical & 32, 64, 128, 256 \\
+    \texttt{n\_epochs}      & int & $[4,\;20]$ \\
+    \texttt{gamma}          & float & $[0.95,\;0.999]$ \\
+    \texttt{gae\_lambda}    & float & $[0.90,\;1.00]$ \\
+    \texttt{clip\_range}    & float & $[0.10,\;0.40]$ \\
+    \texttt{ent\_coef}      & float & $[0.00,\;0.10]$ \\
+    $w_1$                   & float & $[0.05,\;0.30]$ \\
+    $w_2$                   & float & $[0.50,\;1.50]$ \\
+    $w_3$                   & float & $[0.10,\;1.50]$ \\
+    \bottomrule
+  \end{tabular}
+\end{table}
+
+\begin{table}[h]
+  \centering
+  \caption{Optuna search space for DDPG.}
+  \label{tab:ddpg_space}
+  \begin{tabular}{lll}
+    \toprule
+    Parameter & Type & Range \\
+    \midrule
+    \texttt{learning\_rate}   & log-float & $[10^{-4},\;10^{-2}]$ \\
+    \texttt{buffer\_size}     & categorical & 50k, 100k, 200k \\
+    \texttt{learning\_starts} & int & $[500,\;5000]$ \\
+    \texttt{batch\_size}      & categorical & 64, 128, 256, 512 \\
+    \texttt{tau}              & float & $[0.001,\;0.05]$ \\
+    \texttt{gamma}            & float & $[0.90,\;0.999]$ \\
+    \texttt{train\_freq}      & categorical & 1, 2, 4 \\
+    \texttt{gradient\_steps}  & categorical & 1, 2, 4 \\
+    noise $\sigma$            & float & $[0.01,\;0.30]$ \\
+    $w_1$                     & float & $[0.05,\;0.30]$ \\
+    $w_2$                     & float & $[0.50,\;1.50]$ \\
+    $w_3$                     & float & $[0.10,\;1.50]$ \\
+    \bottomrule
+  \end{tabular}
+\end{table}
+
+% -------------------------------------------------------------------
+\section{Results}
+\label{sec:results}
+
+\subsection{Optuna Optimization Results}
+\label{ssec:optuna_results}
+
+Table~\ref{tab:optuna_best} reports the best trial found by Optuna for each algorithm and the corresponding optimized hyperparameters.
+
+\begin{table}[h]
+  \centering
+  \caption{Optuna best trial results.}
+  \label{tab:optuna_best}
+  \begin{tabular}{lcc}
+    \toprule
+    Parameter & PPO-Opt & DDPG-Opt \\
+    \midrule
+    Best trial & \#31 / 50 & \#46 / 50 \\
+    Best reward (150k steps) & 831.81 & 783.49 \\
+    \texttt{learning\_rate}  & $1.897\times10^{-4}$ & $4.018\times10^{-4}$ \\
+    \texttt{batch\_size}     & 256 & 256 \\
+    \texttt{gamma}           & 0.9712 & 0.9554 \\
+    \texttt{n\_steps} / \texttt{buffer\_size} & 512 & 100k \\
+    \texttt{n\_epochs} / \texttt{train\_freq} & 20 & 4 \\
+    noise $\sigma$           & --- & 0.2407 \\
+    $w_1$                    & 0.2997 & 0.2867 \\
+    $w_2$                    & 0.5055 & 0.6504 \\
+    $w_3$                    & 0.6969 & 0.8614 \\
+    \bottomrule
+  \end{tabular}
+\end{table}
+
+Both agents selected similar reward weights, with $w_1$ near its upper bound (maximizing thermal gradient) and moderately weighted energy penalty $w_2$. PPO achieved a higher best-trial reward (831.81 vs. 783.49), reflecting faster convergence within the 150k-step budget.
+
+\subsection{Training Performance (500,000 Timesteps)}
+\label{ssec:training}
+
+After retraining with the best hyperparameters for 500,000 timesteps, both agents showed stable policy learning. Table~\ref{tab:training} summarizes key training metrics.
+
+\begin{table}[h]
+  \centering
+  \caption{Training performance over 500,000 timesteps.}
+  \label{tab:training}
+  \begin{tabular}{lcc}
+    \toprule
+    Metric & PPO-Opt & DDPG-Opt \\
+    \midrule
+    Best mean reward & 863.03 & 812.24 \\
+    Total training episodes & 16,674 & 16,666 \\
+    Eval return mean & 217.30 & 217.11 \\
+    Eval return std  & 41.54  & 41.43  \\
+    \bottomrule
+  \end{tabular}
+\end{table}
+
+The nearly identical evaluation return (mean $\approx$ 217, std $\approx$ 41) for both agents suggests that both policies converge to comparable operational setpoints despite different learning dynamics. PPO achieves a higher peak reward (863 vs. 812) due to on-policy updates being better calibrated by the tuned clip range.
+
+\subsection{Aspen Static Validation}
+\label{ssec:aspen}
+
+After training, each agent was used to simulate 30 episodes (10 per $\dot{Q}_\text{reb}$ initialization band: low, mid, high) using the surrogate environment. The final $\dot{Q}_\text{reb}$ from each episode was then used as input to Aspen Plus for a static (steady-state) simulation, recovering the actual H\textsubscript{2}S and NH\textsubscript{3} concentrations in the bottoms stream.
+
+Full validation results are reported in Table~\ref{tab:aspen}.
+
+\begin{table}[h]
+  \centering
+  \caption{Aspen static validation results (30 episodes per agent, mean $\pm$ std).}
+  \label{tab:aspen}
+  \begin{tabular}{lcc}
+    \toprule
+    Metric & PPO-Opt & DDPG-Opt \\
+    \midrule
+    $\dot{Q}_\text{reb}$ final (Gcal/h) & $2.679 \pm 0.144$ & $2.676 \pm 0.134$ \\
+    $T_\text{bottom}$ (\textdegree C)   & $166.05 \pm 0.93$ & $166.06 \pm 0.96$ \\
+    $T_\text{top}$ (\textdegree C)      & $60.82  \pm 0.28$ & $60.70  \pm 0.25$ \\
+    $c_\mathrm{H_2S}$ input (ppm)         & $2133.68 \pm 857.81$ & $2094.84 \pm 845.73$ \\
+    $c_\mathrm{NH_3}$ input (ppm)         & $1917.06 \pm 650.81$ & $1903.02 \pm 657.68$ \\
+    H\textsubscript{2}S recovery (\%)   & $\mathbf{99.98 \pm 0.09}$ & $99.86 \pm 0.68$ \\
+    NH\textsubscript{3} loss (\%)       & $0.72 \pm 0.50$ & $0.50 \pm 0.43$ \\
+    Aspen iterations (conv.)            & $5.53 \pm 3.69$ & $16.50 \pm 12.37$ \\
+    \bottomrule
+  \end{tabular}
+\end{table}
+
+Key observations:
+
+\paragraph{Reboiler duty convergence} Both agents converge to nearly identical $\dot{Q}_\text{reb}$ setpoints (2.679 and 2.676~Gcal/h, respectively), significantly below the upper operating limit of 6.0~Gcal/h. This consistent low-duty setpoint is characteristic of operation at the knee-point: the agents identified that additional energy input beyond $\approx$2.68~Gcal/h does not improve stripping performance proportionally, precisely the defining feature of the knee.
+
+\paragraph{Temperature profiles} Both agents achieve essentially the same $T_\text{bottom}$ ($\approx$166.05~\textdegree C) and $T_\text{top}$ ($\approx$60.8~\textdegree C), confirming convergence to the same thermodynamic operating point independent of algorithm.
+
+\paragraph{H\textsubscript{2}S recovery} PPO-Opt achieves a mean H\textsubscript{2}S recovery of 99.98\%, virtually complete removal, with very low variance ($\pm$0.09\%). DDPG-Opt achieves 99.86\% with higher variance ($\pm$0.68\%), suggesting that PPO's policy is marginally more robust across different feed conditions and initialization bands.
+
+\paragraph{NH\textsubscript{3} loss} DDPG-Opt exhibits slightly lower NH\textsubscript{3} loss (0.50\% vs. 0.72\%), a secondary objective that could be relevant depending on downstream treatment requirements.
+
+\paragraph{Aspen convergence} A notable difference is in Aspen convergence behavior: PPO-Opt operating points converge in 5.5 iterations on average, while DDPG-Opt requires 16.5 iterations. This suggests that DDPG-Opt's selected setpoints sit closer to regions of slower convergence in the Aspen solver, potentially associated with operating closer to hydraulic boundaries or regions of stronger component interaction.
+
+\subsection{Robustness to Latent Disturbances}
+\label{ssec:robustness}
+
+Since $c_\mathrm{H_2S}$, $c_\mathrm{NH_3}$, and $E_\text{column}$ were randomized per episode but never revealed to the agent, the validation results implicitly test policy robustness. The low standard deviations in $\dot{Q}_\text{reb}$ (0.14 for PPO, 0.13 for DDPG) despite wide input concentration ranges (875--3500~ppm H\textsubscript{2}S, 750--3000~ppm NH\textsubscript{3}) indicate that both agents learned to infer near-optimal setpoints from thermal measurements alone, confirming the POMDP formulation's practical viability.
+
+% -------------------------------------------------------------------
+\section{Discussion}
+\label{sec:discussion}
+
+\subsection{Comparison with Conventional Approaches}
+Traditional supervisory optimization for stripper columns typically relies on first-principles models updated via parameter estimation (e.g., online reconciliation of efficiency) or static gain matrices calibrated at a nominal operating point. Both approaches require either periodic re-identification or plant tests, are sensitive to model mismatch, and cannot easily incorporate bounds on unmeasured disturbances. The proposed RL framework requires no model update post-training: robustness to latent variability is achieved at training time through domain randomization.
+
+\subsection{Surrogate Accuracy and Policy Transferability}
+The DNN surrogates achieve RMSE below 0.012~\textdegree C, which is far smaller than the thermal gradient exploited by the reward function ($T_\text{bottom} - T_\text{top} \approx 105$~\textdegree C at the knee). This high accuracy ensures that the policy trained on the surrogate transfers reliably to the Aspen simulator, as confirmed by the validation results. The primary source of residual error is the simplified treatment of tray hydraulics and phase equilibria near column capacity limits.
+
+\subsection{PPO vs. DDPG}
+Both algorithms converge to essentially the same operating point, but PPO-Opt outperforms DDPG-Opt on H\textsubscript{2}S recovery (99.98\% vs. 99.86\%) and Aspen convergence speed (5.5 vs. 16.5 iterations). PPO's on-policy updates, regularized by the clipped surrogate objective, appear to produce smoother setpoint trajectories that land in regions where the rigorous simulator converges more easily. DDPG's off-policy learning may introduce subtle distribution shifts that push some operating points toward less numerically stable regions. However, DDPG's marginally lower NH\textsubscript{3} loss suggests a slightly different balance between the two competing objectives in its learned policy.
+
+\subsection{Role of Optuna in Reward Design}
+Jointly optimizing reward weights $w_1$, $w_2$, $w_3$ with RL hyperparameters proved critical: both agents selected $w_1$ values near the upper limit of the search space, indicating that thermal gradient maximization is the dominant signal for locating the knee-point. The energy penalty weight $w_2$ was found in the range 0.50--0.65, balancing efficiency without suppressing exploration of higher-duty regions during training. This automated reward calibration avoids the manual reward engineering that often limits RL applicability in industrial settings.
+
+\subsection{Limitations and Future Work}
+The current validation uses a static Aspen simulation, which captures steady-state behavior but not transient dynamics. A dynamic Aspen Dynamics simulation would be required to validate the incremental control strategy under realistic ramp rates and disturbance rejection scenarios. Additionally, fine-tuning the surrogate using active learning (querying Aspen at states visited by the RL policy) could reduce model bias in the knee-point region. Finally, deploying the agent on a pilot plant or digital twin would allow real-time feedback on closed-loop behavior under actual noise and delay conditions.
+
+% -------------------------------------------------------------------
+\section{Conclusion}
+\label{sec:conclusion}
+
+This work demonstrated that a surrogate-trained RL supervisory agent can reliably locate and maintain the operational knee-point of an H\textsubscript{2}S/NH\textsubscript{3} stripper column using only thermal and flow measurements---without on-line composition analyzers. The POMDP formulation, combined with domain randomization over feed concentrations and Murphree efficiency, yielded policies robust to unmeasured process variability.
+
+Two actor-critic algorithms (PPO and DDPG) were evaluated, both augmented with Optuna Bayesian hyperparameter and reward-weight optimization. Static Aspen validation over 30 episodes per agent showed that:
+\begin{itemize}
+  \item Both agents converge to $\dot{Q}_\text{reb} \approx 2.68$~Gcal/h, well below the energy ceiling, confirming knee-point identification;
+  \item PPO-Opt achieves H\textsubscript{2}S recovery of 99.98\% with low variance and fast Aspen convergence (5.5 iterations per episode);
+  \item DDPG-Opt reaches 99.86\% recovery with higher convergence variability but slightly lower NH\textsubscript{3} loss;
+  \item DNN surrogates with $R^2 > 0.999$ enable policy transfer with negligible model bias.
+\end{itemize}
+
+The results support the practical feasibility of surrogate-trained RL for industrial process optimization, with a clear path toward dynamic validation and real-plant deployment.
+
+% -------------------------------------------------------------------
+\section*{Acknowledgments}
+The authors thank the Process Engineering team for providing operational data and Aspen simulation cases used in this study.
+
+% -------------------------------------------------------------------
+\begin{thebibliography}{10}
+
+\bibitem{mnih2015human}
+V.~Mnih \textit{et al.},
+``Human-level control through deep reinforcement learning,''
+\textit{Nature}, vol.~518, no.~7540, pp.~529--533, 2015.
+
+\bibitem{lillicrap2015continuous}
+T.~P.~Lillicrap \textit{et al.},
+``Continuous control with deep reinforcement learning,''
+in \textit{Proc. ICLR}, 2016.
+
+\bibitem{schulman2017proximal}
+J.~Schulman, F.~Wolski, P.~Dhariwal, A.~Radford, and O.~Klimov,
+``Proximal policy optimization algorithms,''
+\textit{arXiv preprint arXiv:1707.06347}, 2017.
+
+\bibitem{bhosekar2018advances}
+A.~Bhosekar and M.~Ierapetritou,
+``Advances in surrogate based modeling, feasibility analysis, and optimization: A review,''
+\textit{Comput. Chem. Eng.}, vol.~108, pp.~250--267, 2018.
+
+\bibitem{kim2020surrogate}
+S.~H.~Kim and F.~Boukouvala,
+``Machine learning-based surrogate models for data-driven optimization,''
+\textit{Comput. Chem. Eng.}, vol.~139, p.~106826, 2020.
+
+\bibitem{akiba2019optuna}
+T.~Akiba, S.~Sano, T.~Yanase, T.~Ohta, and M.~Koyama,
+``Optuna: A next-generation hyperparameter optimization framework,''
+in \textit{Proc. ACM SIGKDD}, pp.~2623--2631, 2019.
+
+\bibitem{sb3}
+A.~Raffin \textit{et al.},
+``Stable-Baselines3: Reliable reinforcement learning implementations,''
+\textit{J. Mach. Learn. Res.}, vol.~22, no.~268, pp.~1--8, 2021.
+
+\bibitem{mckay1979lhs}
+M.~D.~McKay, R.~J.~Beckman, and W.~J.~Conover,
+``A comparison of three methods for selecting values of input variables in the analysis of output from a computer code,''
+\textit{Technometrics}, vol.~21, no.~2, pp.~239--245, 1979.
+
+\bibitem{murphree1925}
+E.~V.~Murphree,
+``Rectifying column calculations,''
+\textit{Ind. Eng. Chem.}, vol.~17, no.~7, pp.~747--750, 1925.
+
+\bibitem{sutton2018rl}
+R.~S.~Sutton and A.~G.~Barto,
+\textit{Reinforcement Learning: An Introduction}, 2nd~ed.
+Cambridge, MA: MIT Press, 2018.
+
+\end{thebibliography}
+
+\end{document}

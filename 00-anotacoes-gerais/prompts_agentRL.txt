@@ -1,0 +1,65 @@
+Dado o projetoV2.md preciso que você crie um script de treinamento de agente de RL do tipo PPO conforme descrito no projeto.
+Use os modelos surrogates 02_Tbottom_best.keras e 02_Ttop_best.keras para prever as temperaturas de topo e fundo como substitutos do processo químico real.
+Use os 2 tipos de função recompensa conforme descrito no projeto.
+Salve os arquivos necessários para que eu possa usar o agente RL na próxima etapa do projeto que é a integração com a planta simulada no simulador dinâmico
+Coloque tudo relativo a esse desenvolvimento na subpasta 06-agentRL-PPO. Crie subpastas organizadas para scripts, modelos e resultados em texto e figuras
+
+
+Eu estou percebendo que foi utilizado um valor de joelho (knee) entre 3 e 4.5, que seria a regiao de transicao de Tbottom - Ttop quando essa passa de próximo de 100 a próximo de 0
+Entretanto, essa regiao de transicao é posterior a regiao de transicao realmente desejada que seria um joelho de Tbottom que ocorre entre 2.4 e 3, onde Tbottom muda a sua taxa de variação relativo a carga térmica do refervedor, Qreb.
+Olhando Tbottom - Ttop, o "joelho" desejado não esta na grande diminuição que leva essa diferença a zero, mas na transição que essa diferença interrompe o aumento e começa a diminuir.
+Crie um script na pasta 06-agentRL-PPO para detectar o joelho conforme descrito acima usando os dados sim_results.csv. Confira se é realmente entre 2.4 e 3 (pois eu verifiquei isso visualmente com gráficos de uma análise de sensibilidade)
+
+Pode também avaliar se as funções recompensa A, B, C precisam de ajustes devido a essa mudança de entendimento?
+Se for necessário alterar as funções recompensa, corrigir o arquivo de projetoV3, calibracao da funcao recompensa C e os arquivos de treinamento do agente para considerar esse joelho desejado?
+
+Para fazer ainda:
+Pode verificar se o treinamento do agentRL está considerando as inicializações do agente referente as regiões corretas do joelho (antes, próximo e depois) conforme novo entendimento dos valores do joelho.
+
+
+CONTEXTO:
+  Joelho antigo (usado atualmente): baseado na transicao de delta_T de ~100 a ~0
+    -> Regiao Qreb 3.0 a 4.5, delta_t_ref = 5.7, sigma = 27.6
+  Joelho correto: ponto de desaceleracao de Tbottom (saturacao)
+    -> Regiao Qreb ~{qreb_knee_best:.1f}, delta_T no pico ~{dt_at_knee:.0f}
+
+RECOMPENSA A: r = w1*(Tbottom-Ttop)_norm - w2*Qreb_norm - w3*var(Tbottom)
+  Impacto: delta_T e' maximo (~{dt_peak:.0f}) na regiao do joelho, diminuindo
+  para ambos os lados. O trade-off linear com Qreb cria um otimo proximo
+  ao joelho. Nao requer mudanca estrutural, mas o sinal delta_T domina
+  fortemente sobre Qreb (100 vs ~5 no extremo). A normalizacao atual usa
+  (output_maxs[0] - output_mins[1]) = ~108 como denominador, o que coloca
+  delta_T_norm ~ 0.93 no joelho. -> SEM ALTERACAO NECESSARIA na formula.
+
+RECOMPENSA B: r = delta_T / (Qreb + eps)
+  Impacto: a eficiencia delta_T/Qreb e' maximizada no joelho porque delta_T
+  e' alto e Qreb e' baixo. -> SEM ALTERACAO NECESSARIA na formula.
+
+
+
+  xxxxxx
+
+  eu quero que leia os arquivo 05-visualizacao caminhos Qreb 2 e providencie essas novas visualizações de resultados.
+  altere o evaluate.py para gerar os novos gráficos e resultados, se necessário altere o script train_ppo.py para gerar informações pro evaluate.py
+  
+
+  xxxxxx
+
+Gere um novo script de 01_simulate_agent.py na pasta 07-agentRL-PPO-aspen-static que faça as seguintes tarefas nessa ordem:
+- Elencar 10 episódios (ajustável no começo do arquivo) de cada faixa de Qreb inicial (low, mid, high), contendo os dados iniciais "Qfeed", "Tfeed", "Qreb", "Pcolumn"
+- Simular os episódios usando o agente RL treinado de acordo com a run "01" (ajustável no começo do arquivo) e reward "A" (ajustável no começo do arquivo) e disponível na pasta 06-agentRL-PPO/models. O formato da subpasta onde está o modelo é PPO_reward<reward>_<run>_<data e hora da geração do arquivo>
+- Guardar a informação as informações iniciais "Qfeed", "Tfeed", "Qreb", "Pcolumn", além do Qreb no final da simulação do episódio e número de iterações que o agente precisou para chegar nesse Qreb final (n_iter_final) em colunas de um arquivo <run>-<reward>-episodes_results.csv.
+- Preparar arquivos csv para serem simulados no aspen semelhante aos arquivos csv de entrada do script 03-simulation_cases\03-simulate.py (remain_sim_points_part_1.csv e sim_points_part_2.csv), mas ao invés de usar o Qreb inicial para simulação, o script deve usar o Qreb final do episódio para eu possa avaliar a recuperação final de H2S e perda de NH3 no gás ácido.
+
+Gerar um novo script 02_simulate_aspen.py que faça as seguintes tarefas nessa ordem:
+- Executar a simulação no Aspen Plus utilizando os arquivos csv gerados pelo script 01_simulate_agent.py e ler os valores de Tbottom, Ttop,  H2S_Recover e NH3_Loss dos caminhos especificados abaixo:
+Tbottom e Ttop = caminhos já especificados no script 03-simulation_cases\03-simulate.py
+H2S_Recover = r"\Data\Flowsheeting Options\Calculator\C-1\Output\WRITE_VAL\5"
+NH3_Loss = "\Data\Flowsheeting Options\Calculator\C-1\Output\WRITE_VAL\6"
+O script deve simular os pontos no aspen plus semelhante o script 03-simulation_cases\03-simulate.py
+O script deve salvar os resultados das simulações no arquivo de resultados semelhante ao sim_results_part1.csv/part2.csv, porém adicionando as colunas de H2S_Recover e NH3_Loss.
+Trazer os valores de número de iterações para atingir Qreb final e salvar no arquivo de resultados
+- Juntar os arquivos de resultados num arquivo final sim_results_<run>_<reward>.csv
+
+
+xxx

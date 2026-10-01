@@ -1,0 +1,86 @@
+\relax 
+\providecommand \babel@aux [2]{\global \let \babel@toc \@gobbletwo }
+\@nameuse{bbl@beforestart}
+\providecommand\hyper@newdestlabel[2]{}
+\providecommand\HyField@AuxAddToFields[1]{}
+\providecommand\HyField@AuxAddToCoFields[2]{}
+\citation{mnih2015human,lillicrap2015continuous,schulman2017proximal}
+\citation{bhosekar2018advances,kim2020surrogate}
+\babel@aux{english}{}
+\@writefile{toc}{\contentsline {section}{\numberline {I}Introduction}{1}{section.1}\protected@file@percent }
+\newlabel{sec:intro}{{I}{1}{Introduction}{section.1}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {II}Process Description}{1}{section.2}\protected@file@percent }
+\newlabel{sec:process}{{II}{1}{Process Description}{section.2}{}}
+\citation{schulman2017proximal}
+\citation{lillicrap2015continuous}
+\citation{sb3}
+\citation{akiba2019optuna}
+\@writefile{toc}{\contentsline {section}{\numberline {III}Methodology}{2}{section.3}\protected@file@percent }
+\newlabel{sec:method}{{III}{2}{Methodology}{section.3}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {\mbox  {III-A}}DNN Surrogate Model}{2}{subsection.3.1}\protected@file@percent }
+\newlabel{ssec:surrogate}{{\mbox  {III-A}}{2}{DNN Surrogate Model}{subsection.3.1}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {\mbox  {III-A}1}Dataset Generation via LHS}{2}{subsubsection.3.1.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {\mbox  {III-A}2}Architecture and Training}{2}{subsubsection.3.1.2}\protected@file@percent }
+\@writefile{lot}{\contentsline {table}{\numberline {I}{\ignorespaces Surrogate DNN performance on the held-out test set.}}{2}{table.1}\protected@file@percent }
+\newlabel{tab:surrogate}{{I}{2}{Surrogate DNN performance on the held-out test set}{table.1}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {\mbox  {III-B}}Reinforcement Learning Formulation}{2}{subsection.3.2}\protected@file@percent }
+\newlabel{ssec:rl}{{\mbox  {III-B}}{2}{Reinforcement Learning Formulation}{subsection.3.2}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {\mbox  {III-B}1}POMDP Formulation}{2}{subsubsection.3.2.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {\mbox  {III-B}2}Action Space}{2}{subsubsection.3.2.2}\protected@file@percent }
+\newlabel{eq:action}{{1}{2}{Action Space}{equation.1}{}}
+\newlabel{eq:clip}{{2}{2}{Action Space}{equation.2}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {\mbox  {III-B}3}Reward Function}{2}{subsubsection.3.2.3}\protected@file@percent }
+\newlabel{eq:reward}{{3}{2}{Reward Function}{equation.3}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {\mbox  {III-B}4}Episode Initialization and Domain Randomization}{2}{subsubsection.3.2.4}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {\mbox  {III-C}}Actor-Critic Algorithms}{2}{subsection.3.3}\protected@file@percent }
+\newlabel{ssec:algorithms}{{\mbox  {III-C}}{2}{Actor-Critic Algorithms}{subsection.3.3}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {\mbox  {III-C}1}PPO (Proximal Policy Optimization)}{2}{subsubsection.3.3.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {\mbox  {III-C}2}DDPG (Deep Deterministic Policy Gradient)}{2}{subsubsection.3.3.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {\mbox  {III-D}}Hyperparameter Optimization with Optuna}{2}{subsection.3.4}\protected@file@percent }
+\newlabel{ssec:optuna}{{\mbox  {III-D}}{2}{Hyperparameter Optimization with Optuna}{subsection.3.4}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {II}{\ignorespaces Optuna search space for PPO.}}{3}{table.2}\protected@file@percent }
+\newlabel{tab:ppo_space}{{II}{3}{Optuna search space for PPO}{table.2}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {III}{\ignorespaces Optuna search space for DDPG.}}{3}{table.3}\protected@file@percent }
+\newlabel{tab:ddpg_space}{{III}{3}{Optuna search space for DDPG}{table.3}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {IV}Results}{3}{section.4}\protected@file@percent }
+\newlabel{sec:results}{{IV}{3}{Results}{section.4}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {\mbox  {IV-A}}Optuna Optimization Results}{3}{subsection.4.1}\protected@file@percent }
+\newlabel{ssec:optuna_results}{{\mbox  {IV-A}}{3}{Optuna Optimization Results}{subsection.4.1}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {IV}{\ignorespaces Optuna best trial results.}}{3}{table.4}\protected@file@percent }
+\newlabel{tab:optuna_best}{{IV}{3}{Optuna best trial results}{table.4}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {\mbox  {IV-B}}Training Performance (500,000 Timesteps)}{3}{subsection.4.2}\protected@file@percent }
+\newlabel{ssec:training}{{\mbox  {IV-B}}{3}{Training Performance (500,000 Timesteps)}{subsection.4.2}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {V}{\ignorespaces Training performance over 500,000 timesteps.}}{3}{table.5}\protected@file@percent }
+\newlabel{tab:training}{{V}{3}{Training performance over 500,000 timesteps}{table.5}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {\mbox  {IV-C}}Aspen Static Validation}{3}{subsection.4.3}\protected@file@percent }
+\newlabel{ssec:aspen}{{\mbox  {IV-C}}{3}{Aspen Static Validation}{subsection.4.3}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {VI}{\ignorespaces Aspen static validation results (30 episodes per agent, mean $\pm $ std).}}{3}{table.6}\protected@file@percent }
+\newlabel{tab:aspen}{{VI}{3}{Aspen static validation results (30 episodes per agent, mean $\pm $ std)}{table.6}{}}
+\@writefile{toc}{\contentsline {paragraph}{\numberline {\mbox  {IV-C}0a}Reboiler duty convergence}{3}{paragraph.4.3.0.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{\numberline {\mbox  {IV-C}0b}Temperature profiles}{3}{paragraph.4.3.0.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{\numberline {\mbox  {IV-C}0c}H\textsubscript  {2}S recovery}{4}{paragraph.4.3.0.3}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{\numberline {\mbox  {IV-C}0d}NH\textsubscript  {3} loss}{4}{paragraph.4.3.0.4}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{\numberline {\mbox  {IV-C}0e}Aspen convergence}{4}{paragraph.4.3.0.5}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {\mbox  {IV-D}}Robustness to Latent Disturbances}{4}{subsection.4.4}\protected@file@percent }
+\newlabel{ssec:robustness}{{\mbox  {IV-D}}{4}{Robustness to Latent Disturbances}{subsection.4.4}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {V}Discussion}{4}{section.5}\protected@file@percent }
+\newlabel{sec:discussion}{{V}{4}{Discussion}{section.5}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {\mbox  {V-A}}Comparison with Conventional Approaches}{4}{subsection.5.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {\mbox  {V-B}}Surrogate Accuracy and Policy Transferability}{4}{subsection.5.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {\mbox  {V-C}}PPO vs. DDPG}{4}{subsection.5.3}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {\mbox  {V-D}}Role of Optuna in Reward Design}{4}{subsection.5.4}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {\mbox  {V-E}}Limitations and Future Work}{4}{subsection.5.5}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {VI}Conclusion}{4}{section.6}\protected@file@percent }
+\newlabel{sec:conclusion}{{VI}{4}{Conclusion}{section.6}{}}
+\bibcite{mnih2015human}{1}
+\bibcite{lillicrap2015continuous}{2}
+\bibcite{schulman2017proximal}{3}
+\bibcite{bhosekar2018advances}{4}
+\bibcite{kim2020surrogate}{5}
+\bibcite{akiba2019optuna}{6}
+\bibcite{sb3}{7}
+\bibcite{mckay1979lhs}{8}
+\bibcite{murphree1925}{9}
+\bibcite{sutton2018rl}{10}
+\@writefile{toc}{\contentsline {section}{References}{5}{section*.2}\protected@file@percent }
+\gdef \@abspage@last{5}

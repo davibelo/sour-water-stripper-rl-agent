@@ -1,0 +1,37 @@
+{
+  "run_dir": "c:\\Users\\davib\\Downloads\\Pesquisa\\14-agentRL-PPO-Opt2\\models\\PPO_opt_best_A_opt02_20260330_211247",
+  "reward_type": "A",
+  "n_episodes": 20,
+  "return_mean": 203.91938978824766,
+  "return_std": 40.09772350202674,
+  "final_qreb_mean": 2.6510652982185983,
+  "final_qreb_std": 0.13062285369584425,
+  "final_deltaT_mean": 105.20465911750895,
+  "final_deltaT_std": 1.1123399627232649,
+  "training_meta": {
+    "run_name": "PPO_opt_best_A_opt02_20260330_211247",
+    "reward_type": "A",
+    "total_timesteps": 500000,
+    "ppo_params": {
+      "learning_rate": 6.410336734407213e-05,
+      "n_steps": 1024,
+      "batch_size": 32,
+      "n_epochs": 20,
+      "gamma": 0.9597376338619381,
+      "gae_lambda": 0.9010494466203043,
+      "clip_range": 0.27628803172678146,
+      "ent_coef": 0.00218915148201336,
+      "vf_coef": 0.7222225728638686,
+      "max_grad_norm": 0.423405760750266
+    },
+    "reward_weights_a": {
+      "w1": 0.1,
+      "w2": 0.9,
+      "w3": 0.6
+    },
+    "seed": 42,
+    "best_mean_reward": 226.76392294999997,
+    "total_episodes": 16691,
+    "episode_rewards_mean": 3.2540002031082986
+  }
+}

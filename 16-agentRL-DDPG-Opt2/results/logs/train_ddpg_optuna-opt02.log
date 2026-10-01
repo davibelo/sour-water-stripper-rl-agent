@@ -1,0 +1,216 @@
+2026-03-30 10:50:04,858 - INFO - ============================================================
+2026-03-30 10:50:04,870 - INFO - Estudo Optuna — reward 'A' | 50 trials × 150000 timesteps
+2026-03-30 10:50:04,870 - INFO - ============================================================
+2026-03-30 10:50:04,870 - INFO - Trial 000 | ddpg={'learning_rate': 0.0005611516415334506, 'buffer_size': 50000, 'learning_starts': 1202, 'batch_size': 256, 'tau': 0.03569555631200623, 'gamma': 0.9020378649352845, 'train_freq': 1, 'gradient_steps': 4} | noise_sigma=0.1622 | weights={'w1': 0.1, 'w2': 0.9, 'w3': 0.6}
+2026-03-30 11:53:52,620 - INFO - Trial 000 | best_mean_reward=216.8381
+2026-03-30 11:53:52,622 - INFO - Trial 001 | ddpg={'learning_rate': 0.0007309539835912913, 'buffer_size': 100000, 'learning_starts': 1814, 'batch_size': 256, 'tau': 0.02619748748226697, 'gamma': 0.9586490423173422, 'train_freq': 2, 'gradient_steps': 4} | noise_sigma=0.2444 | weights={'w1': 0.1, 'w2': 0.9, 'w3': 0.6}
+2026-03-30 12:30:23,205 - INFO - Trial 001 | best_mean_reward=216.6531
+2026-03-30 12:30:23,207 - INFO - Trial 002 | ddpg={'learning_rate': 0.0004066563313514797, 'buffer_size': 100000, 'learning_starts': 1049, 'batch_size': 256, 'tau': 0.03346359193334512, 'gamma': 0.9308593965328517, 'train_freq': 2, 'gradient_steps': 1} | noise_sigma=0.2695 | weights={'w1': 0.1, 'w2': 0.9, 'w3': 0.6}
+2026-03-30 12:47:21,694 - INFO - Trial 002 | best_mean_reward=217.5246
+2026-03-30 12:47:21,694 - INFO - Trial 003 | ddpg={'learning_rate': 0.0015696396388661157, 'buffer_size': 50000, 'learning_starts': 703, 'batch_size': 512, 'tau': 0.018480913007985877, 'gamma': 0.9278125164590507, 'train_freq': 4, 'gradient_steps': 2} | noise_sigma=0.0676 | weights={'w1': 0.1, 'w2': 0.9, 'w3': 0.6}
+2026-03-30 13:06:52,060 - INFO - Trial 003 | best_mean_reward=181.1751
+2026-03-30 13:06:52,062 - INFO - Trial 004 | ddpg={'learning_rate': 0.00010257563974185662, 'buffer_size': 50000, 'learning_starts': 3971, 'batch_size': 512, 'tau': 0.03154160821455034, 'gamma': 0.9327589044604123, 'train_freq': 4, 'gradient_steps': 4} | noise_sigma=0.1469 | weights={'w1': 0.1, 'w2': 0.9, 'w3': 0.6}
+2026-03-30 13:34:45,624 - INFO - Trial 004 | best_mean_reward=216.8919
+2026-03-30 13:34:45,624 - INFO - Trial 005 | ddpg={'learning_rate': 0.00017345566642360953, 'buffer_size': 100000, 'learning_starts': 3970, 'batch_size': 128, 'tau': 0.006286679922671918, 'gamma': 0.9031114893829867, 'train_freq': 1, 'gradient_steps': 1} | noise_sigma=0.2291 | weights={'w1': 0.1, 'w2': 0.9, 'w3': 0.6}
+2026-03-30 13:55:34,609 - INFO - Trial 005 | best_mean_reward=217.1233
+2026-03-30 13:55:34,609 - INFO - Trial 006 | ddpg={'learning_rate': 0.00028681134821030097, 'buffer_size': 100000, 'learning_starts': 4684, 'batch_size': 256, 'tau': 0.010141932885415757, 'gamma': 0.9883633408505078, 'train_freq': 4, 'gradient_steps': 1} | noise_sigma=0.1339 | weights={'w1': 0.1, 'w2': 0.9, 'w3': 0.6}
+2026-03-30 14:09:16,267 - INFO - Trial 006 | best_mean_reward=181.1751
+2026-03-30 14:09:16,269 - INFO - Trial 007 | ddpg={'learning_rate': 0.00432543242796456, 'buffer_size': 50000, 'learning_starts': 2378, 'batch_size': 512, 'tau': 0.01683694366901701, 'gamma': 0.9513602715525933, 'train_freq': 4, 'gradient_steps': 1} | noise_sigma=0.0973 | weights={'w1': 0.1, 'w2': 0.9, 'w3': 0.6}
+2026-03-30 14:24:20,609 - INFO - Trial 007 | best_mean_reward=181.1751
+2026-03-30 14:24:20,611 - INFO - Trial 008 | ddpg={'learning_rate': 0.00037126241790405324, 'buffer_size': 100000, 'learning_starts': 731, 'batch_size': 128, 'tau': 0.02498318525360059, 'gamma': 0.9975793949569495, 'train_freq': 4, 'gradient_steps': 2} | noise_sigma=0.1934 | weights={'w1': 0.1, 'w2': 0.9, 'w3': 0.6}
+2026-03-30 14:40:06,196 - INFO - Trial 008 | best_mean_reward=204.1821
+2026-03-30 14:40:06,198 - INFO - Trial 009 | ddpg={'learning_rate': 0.0018495216589727262, 'buffer_size': 200000, 'learning_starts': 1943, 'batch_size': 512, 'tau': 0.0018128036174649515, 'gamma': 0.9506972127716289, 'train_freq': 2, 'gradient_steps': 4} | noise_sigma=0.0499 | weights={'w1': 0.1, 'w2': 0.9, 'w3': 0.6}
+2026-03-30 15:26:33,692 - INFO - Trial 009 | best_mean_reward=214.7416
+2026-03-30 15:26:33,698 - INFO - Trial 010 | ddpg={'learning_rate': 0.007767353816237056, 'buffer_size': 200000, 'learning_starts': 3028, 'batch_size': 64, 'tau': 0.048550692283749114, 'gamma': 0.9725866360960476, 'train_freq': 2, 'gradient_steps': 1} | noise_sigma=0.2913 | weights={'w1': 0.1, 'w2': 0.9, 'w3': 0.6}
+2026-03-30 15:41:50,124 - INFO - Trial 010 | best_mean_reward=181.1751
+2026-03-30 15:41:50,128 - INFO - Trial 011 | ddpg={'learning_rate': 0.00013027521152280666, 'buffer_size': 100000, 'learning_starts': 3396, 'batch_size': 128, 'tau': 0.04463646146358345, 'gamma': 0.9019683661198187, 'train_freq': 1, 'gradient_steps': 1} | noise_sigma=0.2387 | weights={'w1': 0.1, 'w2': 0.9, 'w3': 0.6}
+2026-03-30 16:02:51,751 - INFO - Trial 011 | best_mean_reward=217.1637
+2026-03-30 16:02:51,758 - INFO - Trial 012 | ddpg={'learning_rate': 0.0001047327679809696, 'buffer_size': 100000, 'learning_starts': 3123, 'batch_size': 128, 'tau': 0.044039239734767935, 'gamma': 0.9207365632122902, 'train_freq': 1, 'gradient_steps': 1} | noise_sigma=0.2983 | weights={'w1': 0.1, 'w2': 0.9, 'w3': 0.6}
+2026-03-30 16:24:02,648 - INFO - Trial 012 | best_mean_reward=217.5432
+2026-03-30 16:24:02,656 - INFO - Trial 013 | ddpg={'learning_rate': 0.0002484278410949452, 'buffer_size': 100000, 'learning_starts': 2558, 'batch_size': 64, 'tau': 0.03998565824962407, 'gamma': 0.9259297986054696, 'train_freq': 2, 'gradient_steps': 1} | noise_sigma=0.2997 | weights={'w1': 0.1, 'w2': 0.9, 'w3': 0.6}
+2026-03-30 16:39:19,763 - INFO - Trial 013 | best_mean_reward=213.0977
+2026-03-30 16:39:19,783 - INFO - Trial 014 | ddpg={'learning_rate': 0.00123623323300942, 'buffer_size': 100000, 'learning_starts': 3462, 'batch_size': 128, 'tau': 0.04105380053901026, 'gamma': 0.9206077118542683, 'train_freq': 1, 'gradient_steps': 1} | noise_sigma=0.2755 | weights={'w1': 0.1, 'w2': 0.9, 'w3': 0.6}
+2026-03-30 17:00:52,081 - INFO - Trial 014 | best_mean_reward=217.4427
+2026-03-30 17:00:52,087 - INFO - Trial 015 | ddpg={'learning_rate': 0.000461892935274469, 'buffer_size': 100000, 'learning_starts': 1772, 'batch_size': 256, 'tau': 0.032380965065354594, 'gamma': 0.9364141001913184, 'train_freq': 2, 'gradient_steps': 1} | noise_sigma=0.1963 | weights={'w1': 0.1, 'w2': 0.9, 'w3': 0.6}
+2026-03-30 17:18:05,833 - INFO - Trial 015 | best_mean_reward=181.1751
+2026-03-30 17:18:05,839 - INFO - Trial 016 | ddpg={'learning_rate': 0.00019756087475520731, 'buffer_size': 200000, 'learning_starts': 4768, 'batch_size': 256, 'tau': 0.045874498317354705, 'gamma': 0.9161528719157862, 'train_freq': 1, 'gradient_steps': 2} | noise_sigma=0.0138 | weights={'w1': 0.1, 'w2': 0.9, 'w3': 0.6}
+2026-03-30 17:54:05,970 - INFO - Trial 016 | best_mean_reward=216.8671
+2026-03-30 17:54:05,974 - INFO - Trial 017 | ddpg={'learning_rate': 0.0008362149962117068, 'buffer_size': 100000, 'learning_starts': 1216, 'batch_size': 128, 'tau': 0.03759532301130009, 'gamma': 0.9396747990872052, 'train_freq': 2, 'gradient_steps': 1} | noise_sigma=0.2611 | weights={'w1': 0.1, 'w2': 0.9, 'w3': 0.6}
+2026-03-30 18:10:05,716 - INFO - Trial 017 | best_mean_reward=216.9902
+2026-03-30 18:10:05,722 - INFO - Trial 018 | ddpg={'learning_rate': 0.0028827413730968528, 'buffer_size': 100000, 'learning_starts': 2978, 'batch_size': 64, 'tau': 0.027336809227420638, 'gamma': 0.9156371787059456, 'train_freq': 1, 'gradient_steps': 1} | noise_sigma=0.2022 | weights={'w1': 0.1, 'w2': 0.9, 'w3': 0.6}
+2026-03-30 18:30:31,170 - INFO - Trial 018 | best_mean_reward=181.1751
+2026-03-30 18:30:31,184 - INFO - Trial 019 | ddpg={'learning_rate': 0.00010111993673867917, 'buffer_size': 200000, 'learning_starts': 2279, 'batch_size': 256, 'tau': 0.04918924916323728, 'gamma': 0.9657102037244123, 'train_freq': 2, 'gradient_steps': 2} | noise_sigma=0.2704 | weights={'w1': 0.1, 'w2': 0.9, 'w3': 0.6}
+2026-03-30 18:54:01,448 - INFO - Trial 019 | best_mean_reward=207.3582
+2026-03-30 18:54:01,454 - INFO - Trial 020 | ddpg={'learning_rate': 0.00034030509965823436, 'buffer_size': 100000, 'learning_starts': 1390, 'batch_size': 128, 'tau': 0.042376727944231425, 'gamma': 0.9441669043361431, 'train_freq': 1, 'gradient_steps': 1} | noise_sigma=0.2178 | weights={'w1': 0.1, 'w2': 0.9, 'w3': 0.6}
+2026-03-30 19:15:27,640 - INFO - Trial 020 | best_mean_reward=216.4189
+2026-03-30 19:15:27,644 - INFO - Trial 021 | ddpg={'learning_rate': 0.0012047774879929685, 'buffer_size': 100000, 'learning_starts': 3553, 'batch_size': 128, 'tau': 0.03520628696225634, 'gamma': 0.9167649805708636, 'train_freq': 1, 'gradient_steps': 1} | noise_sigma=0.2684 | weights={'w1': 0.1, 'w2': 0.9, 'w3': 0.6}
+2026-03-30 19:37:04,829 - INFO - Trial 021 | best_mean_reward=181.1751
+2026-03-30 19:37:04,838 - INFO - Trial 022 | ddpg={'learning_rate': 0.0020776842557605995, 'buffer_size': 100000, 'learning_starts': 4121, 'batch_size': 128, 'tau': 0.039351865372037775, 'gamma': 0.9205511294967199, 'train_freq': 1, 'gradient_steps': 1} | noise_sigma=0.2838 | weights={'w1': 0.1, 'w2': 0.9, 'w3': 0.6}
+2026-03-30 19:58:40,796 - INFO - Trial 022 | best_mean_reward=181.1751
+2026-03-30 19:58:40,812 - INFO - Trial 023 | ddpg={'learning_rate': 0.000653926448702726, 'buffer_size': 100000, 'learning_starts': 3393, 'batch_size': 128, 'tau': 0.04346264904695438, 'gamma': 0.9109378763554618, 'train_freq': 1, 'gradient_steps': 1} | noise_sigma=0.2519 | weights={'w1': 0.1, 'w2': 0.9, 'w3': 0.6}
+2026-03-30 20:19:57,854 - INFO - Trial 023 | best_mean_reward=217.3561
+2026-03-30 20:19:57,862 - INFO - Trial 024 | ddpg={'learning_rate': 0.0010006974566325224, 'buffer_size': 100000, 'learning_starts': 2881, 'batch_size': 128, 'tau': 0.03129776694060693, 'gamma': 0.9278087039364524, 'train_freq': 1, 'gradient_steps': 1} | noise_sigma=0.2968 | weights={'w1': 0.1, 'w2': 0.9, 'w3': 0.6}
+2026-03-30 20:41:22,865 - INFO - Trial 024 | best_mean_reward=216.8222
+2026-03-30 20:41:22,873 - INFO - Trial 025 | ddpg={'learning_rate': 0.0027246283813806118, 'buffer_size': 100000, 'learning_starts': 3636, 'batch_size': 128, 'tau': 0.04076672759919402, 'gamma': 0.9091100053042752, 'train_freq': 1, 'gradient_steps': 1} | noise_sigma=0.2726 | weights={'w1': 0.1, 'w2': 0.9, 'w3': 0.6}
+2026-03-30 21:03:35,805 - INFO - Trial 025 | best_mean_reward=181.1751
+2026-03-30 21:03:35,810 - INFO - Trial 026 | ddpg={'learning_rate': 0.0012404457365846465, 'buffer_size': 100000, 'learning_starts': 4346, 'batch_size': 256, 'tau': 0.02228051215069068, 'gamma': 0.9238327945953095, 'train_freq': 2, 'gradient_steps': 1} | noise_sigma=0.1755 | weights={'w1': 0.1, 'w2': 0.9, 'w3': 0.6}
+2026-03-30 21:21:32,594 - INFO - Trial 026 | best_mean_reward=216.9657
+2026-03-30 21:21:32,600 - INFO - Trial 027 | ddpg={'learning_rate': 0.00016625352317535416, 'buffer_size': 100000, 'learning_starts': 3190, 'batch_size': 64, 'tau': 0.032914030577857925, 'gamma': 0.9332451071155983, 'train_freq': 1, 'gradient_steps': 1} | noise_sigma=0.2188 | weights={'w1': 0.1, 'w2': 0.9, 'w3': 0.6}
+2026-03-30 21:42:34,224 - INFO - Trial 027 | best_mean_reward=181.2239
+2026-03-30 21:42:34,224 - INFO - Trial 028 | ddpg={'learning_rate': 0.00045292438349247503, 'buffer_size': 50000, 'learning_starts': 2709, 'batch_size': 128, 'tau': 0.047489888849512545, 'gamma': 0.9396787303935241, 'train_freq': 1, 'gradient_steps': 2} | noise_sigma=0.1209 | weights={'w1': 0.1, 'w2': 0.9, 'w3': 0.6}
+2026-03-30 22:13:10,557 - INFO - Trial 028 | best_mean_reward=216.5661
+2026-03-30 22:13:10,570 - INFO - Trial 029 | ddpg={'learning_rate': 0.0005753370118754083, 'buffer_size': 200000, 'learning_starts': 3791, 'batch_size': 256, 'tau': 0.036240648796304925, 'gamma': 0.9081066275209354, 'train_freq': 2, 'gradient_steps': 4} | noise_sigma=0.1643 | weights={'w1': 0.1, 'w2': 0.9, 'w3': 0.6}
+2026-03-30 22:46:36,946 - INFO - Trial 029 | best_mean_reward=217.1119
+2026-03-30 22:46:36,962 - INFO - Trial 030 | ddpg={'learning_rate': 0.00022434236620179847, 'buffer_size': 50000, 'learning_starts': 2052, 'batch_size': 256, 'tau': 0.02899719040627308, 'gamma': 0.9451527460275468, 'train_freq': 1, 'gradient_steps': 4} | noise_sigma=0.2551 | weights={'w1': 0.1, 'w2': 0.9, 'w3': 0.6}
+2026-03-30 23:44:26,234 - INFO - Trial 030 | best_mean_reward=216.9238
+2026-03-30 23:44:26,248 - INFO - Trial 031 | ddpg={'learning_rate': 0.0006110920294651958, 'buffer_size': 100000, 'learning_starts': 3272, 'batch_size': 128, 'tau': 0.04410838087119821, 'gamma': 0.9157216587048653, 'train_freq': 1, 'gradient_steps': 1} | noise_sigma=0.2416 | weights={'w1': 0.1, 'w2': 0.9, 'w3': 0.6}
+2026-03-31 00:03:52,046 - INFO - Trial 031 | best_mean_reward=217.5024
+2026-03-31 00:03:52,054 - INFO - Trial 032 | ddpg={'learning_rate': 0.0009143790735846452, 'buffer_size': 100000, 'learning_starts': 3232, 'batch_size': 128, 'tau': 0.043473608466207424, 'gamma': 0.9198850778178234, 'train_freq': 1, 'gradient_steps': 1} | noise_sigma=0.2756 | weights={'w1': 0.1, 'w2': 0.9, 'w3': 0.6}
+2026-03-31 00:23:25,169 - INFO - Trial 032 | best_mean_reward=217.7242
+2026-03-31 00:23:25,169 - INFO - Trial 033 | ddpg={'learning_rate': 0.0007302784415939156, 'buffer_size': 100000, 'learning_starts': 3154, 'batch_size': 128, 'tau': 0.044758800316779715, 'gamma': 0.9313516188513801, 'train_freq': 1, 'gradient_steps': 1} | noise_sigma=0.2436 | weights={'w1': 0.1, 'w2': 0.9, 'w3': 0.6}
+2026-03-31 00:42:53,419 - INFO - Trial 033 | best_mean_reward=217.2817
+2026-03-31 00:42:53,419 - INFO - Trial 034 | ddpg={'learning_rate': 0.00047542419341700676, 'buffer_size': 100000, 'learning_starts': 2686, 'batch_size': 128, 'tau': 0.03706574504076473, 'gamma': 0.9119166676080882, 'train_freq': 1, 'gradient_steps': 1} | noise_sigma=0.2851 | weights={'w1': 0.1, 'w2': 0.9, 'w3': 0.6}
+2026-03-31 01:02:23,084 - INFO - Trial 034 | best_mean_reward=216.8284
+2026-03-31 01:02:23,089 - INFO - Trial 035 | ddpg={'learning_rate': 0.0008663481727240683, 'buffer_size': 100000, 'learning_starts': 555, 'batch_size': 512, 'tau': 0.046406542398187124, 'gamma': 0.9212688713250862, 'train_freq': 1, 'gradient_steps': 4} | noise_sigma=0.2258 | weights={'w1': 0.1, 'w2': 0.9, 'w3': 0.6}
+2026-03-31 02:20:56,509 - INFO - Trial 035 | best_mean_reward=215.2899
+2026-03-31 02:20:56,516 - INFO - Trial 036 | ddpg={'learning_rate': 0.00033060430291376094, 'buffer_size': 50000, 'learning_starts': 1649, 'batch_size': 128, 'tau': 0.042662873705653304, 'gamma': 0.9056648843022299, 'train_freq': 4, 'gradient_steps': 1} | noise_sigma=0.2429 | weights={'w1': 0.1, 'w2': 0.9, 'w3': 0.6}
+2026-03-31 02:33:09,423 - INFO - Trial 036 | best_mean_reward=216.3085
+2026-03-31 02:33:09,431 - INFO - Trial 037 | ddpg={'learning_rate': 0.00015874458427058701, 'buffer_size': 100000, 'learning_starts': 2366, 'batch_size': 256, 'tau': 0.04950061671885241, 'gamma': 0.9297590500280505, 'train_freq': 2, 'gradient_steps': 1} | noise_sigma=0.2589 | weights={'w1': 0.1, 'w2': 0.9, 'w3': 0.6}
+2026-03-31 02:48:55,871 - INFO - Trial 037 | best_mean_reward=209.1562
+2026-03-31 02:48:55,878 - INFO - Trial 038 | ddpg={'learning_rate': 0.0016130386719201651, 'buffer_size': 100000, 'learning_starts': 861, 'batch_size': 512, 'tau': 0.021717394466598282, 'gamma': 0.9136569111839802, 'train_freq': 4, 'gradient_steps': 2} | noise_sigma=0.2989 | weights={'w1': 0.1, 'w2': 0.9, 'w3': 0.6}
+2026-03-31 03:07:16,069 - INFO - Trial 038 | best_mean_reward=181.1751
+2026-03-31 03:07:16,078 - INFO - Trial 039 | ddpg={'learning_rate': 0.0005986715890693446, 'buffer_size': 50000, 'learning_starts': 3878, 'batch_size': 128, 'tau': 0.03426386132906084, 'gamma': 0.9002046316389991, 'train_freq': 1, 'gradient_steps': 1} | noise_sigma=0.2129 | weights={'w1': 0.1, 'w2': 0.9, 'w3': 0.6}
+2026-03-31 03:26:42,641 - INFO - Trial 039 | best_mean_reward=217.3996
+2026-03-31 03:26:42,645 - INFO - Trial 040 | ddpg={'learning_rate': 0.00012125642801059494, 'buffer_size': 100000, 'learning_starts': 4221, 'batch_size': 128, 'tau': 0.016410871299944306, 'gamma': 0.9591832473548076, 'train_freq': 4, 'gradient_steps': 4} | noise_sigma=0.2342 | weights={'w1': 0.1, 'w2': 0.9, 'w3': 0.6}
+2026-03-31 03:45:40,663 - INFO - Trial 040 | best_mean_reward=209.1059
+2026-03-31 03:45:40,669 - INFO - Trial 041 | ddpg={'learning_rate': 0.001110640232080113, 'buffer_size': 100000, 'learning_starts': 3392, 'batch_size': 128, 'tau': 0.039081200930294116, 'gamma': 0.921592852860373, 'train_freq': 1, 'gradient_steps': 1} | noise_sigma=0.2771 | weights={'w1': 0.1, 'w2': 0.9, 'w3': 0.6}
+2026-03-31 04:05:14,069 - INFO - Trial 041 | best_mean_reward=217.2882
+2026-03-31 04:05:14,078 - INFO - Trial 042 | ddpg={'learning_rate': 0.0015051796836484624, 'buffer_size': 100000, 'learning_starts': 3651, 'batch_size': 128, 'tau': 0.04092843578927188, 'gamma': 0.9186940268025204, 'train_freq': 1, 'gradient_steps': 1} | noise_sigma=0.2806 | weights={'w1': 0.1, 'w2': 0.9, 'w3': 0.6}
+2026-03-31 04:24:47,174 - INFO - Trial 042 | best_mean_reward=217.6093
+2026-03-31 04:24:47,190 - INFO - Trial 043 | ddpg={'learning_rate': 0.0024809925389587223, 'buffer_size': 100000, 'learning_starts': 4514, 'batch_size': 128, 'tau': 0.04289630451944144, 'gamma': 0.927531880807263, 'train_freq': 1, 'gradient_steps': 1} | noise_sigma=0.2845 | weights={'w1': 0.1, 'w2': 0.9, 'w3': 0.6}
+2026-03-31 04:44:21,421 - INFO - Trial 043 | best_mean_reward=181.1751
+2026-03-31 04:44:21,441 - INFO - Trial 044 | ddpg={'learning_rate': 0.003989177149173172, 'buffer_size': 100000, 'learning_starts': 3207, 'batch_size': 128, 'tau': 0.038155613491380115, 'gamma': 0.9178747081515836, 'train_freq': 1, 'gradient_steps': 1} | noise_sigma=0.2622 | weights={'w1': 0.1, 'w2': 0.9, 'w3': 0.6}
+2026-03-31 05:04:18,560 - INFO - Trial 044 | best_mean_reward=181.1751
+2026-03-31 05:04:18,569 - INFO - Trial 045 | ddpg={'learning_rate': 0.0014859896557645872, 'buffer_size': 100000, 'learning_starts': 4971, 'batch_size': 512, 'tau': 0.045737997691070946, 'gamma': 0.9339248206542822, 'train_freq': 2, 'gradient_steps': 1} | noise_sigma=0.2501 | weights={'w1': 0.1, 'w2': 0.9, 'w3': 0.6}
+2026-03-31 05:22:28,310 - INFO - Trial 045 | best_mean_reward=217.0777
+2026-03-31 05:22:28,319 - INFO - Trial 046 | ddpg={'learning_rate': 0.0008456910320874945, 'buffer_size': 200000, 'learning_starts': 3720, 'batch_size': 64, 'tau': 0.02991918803443185, 'gamma': 0.9041028610820256, 'train_freq': 1, 'gradient_steps': 1} | noise_sigma=0.2871 | weights={'w1': 0.1, 'w2': 0.9, 'w3': 0.6}
+2026-03-31 05:40:50,729 - INFO - Trial 046 | best_mean_reward=216.6617
+2026-03-31 05:40:50,736 - INFO - Trial 047 | ddpg={'learning_rate': 0.009673822566822364, 'buffer_size': 100000, 'learning_starts': 4007, 'batch_size': 128, 'tau': 0.04083092250724843, 'gamma': 0.9807809650006352, 'train_freq': 1, 'gradient_steps': 1} | noise_sigma=0.2338 | weights={'w1': 0.1, 'w2': 0.9, 'w3': 0.6}
+2026-03-31 06:00:40,285 - INFO - Trial 047 | best_mean_reward=181.1751
+2026-03-31 06:00:40,293 - INFO - Trial 048 | ddpg={'learning_rate': 0.0004732237792481453, 'buffer_size': 100000, 'learning_starts': 2537, 'batch_size': 256, 'tau': 0.04699924495973383, 'gamma': 0.9238710951679691, 'train_freq': 2, 'gradient_steps': 1} | noise_sigma=0.1808 | weights={'w1': 0.1, 'w2': 0.9, 'w3': 0.6}
+2026-03-31 06:16:29,221 - INFO - Trial 048 | best_mean_reward=216.9864
+2026-03-31 06:16:29,227 - INFO - Trial 049 | ddpg={'learning_rate': 0.00026684248872367556, 'buffer_size': 100000, 'learning_starts': 2883, 'batch_size': 128, 'tau': 0.04468994551670273, 'gamma': 0.9389546116337796, 'train_freq': 4, 'gradient_steps': 2} | noise_sigma=0.2747 | weights={'w1': 0.1, 'w2': 0.9, 'w3': 0.6}
+2026-03-31 06:30:54,025 - INFO - Trial 049 | best_mean_reward=212.4873
+2026-03-31 06:30:54,027 - INFO - Estudo concluído — melhor trial: 32
+2026-03-31 06:30:54,027 - INFO - Melhor valor:    217.7242
+2026-03-31 06:30:54,027 - INFO - Melhores params: {'learning_rate': 0.0009143790735846452, 'buffer_size': 100000, 'learning_starts': 3232, 'batch_size': 128, 'tau': 0.043473608466207424, 'gamma': 0.9198850778178234, 'train_freq': 1, 'gradient_steps': 1, 'noise_sigma': 0.2756493005867833, 'w1': 0.1, 'w2': 0.9, 'w3': 0.6}
+2026-03-31 06:30:54,033 - INFO - Resultados do estudo salvos em: C:\Users\davib\Downloads\Pesquisa\16-agentRL-DDPG-Opt2\results\studies\study_ddpg_rewardA_opt02.json
+2026-03-31 06:30:54,035 - INFO - ============================================================
+2026-03-31 06:30:54,035 - INFO - Retreino final: DDPG_opt_best_A_opt02_20260331_063054
+2026-03-31 06:30:54,035 - INFO - DDPG params:    {'learning_rate': 0.0009143790735846452, 'buffer_size': 100000, 'learning_starts': 3232, 'batch_size': 128, 'tau': 0.043473608466207424, 'gamma': 0.9198850778178234, 'train_freq': 1, 'gradient_steps': 1}
+2026-03-31 06:30:54,035 - INFO - Noise sigma:    0.2756
+2026-03-31 06:30:54,035 - INFO - Reward weights: {'w1': 0.1, 'w2': 0.9, 'w3': 0.6}
+2026-03-31 06:30:54,035 - INFO - Timesteps:      500000
+2026-03-31 06:30:54,035 - INFO - ============================================================
+2026-03-31 06:31:17,251 - INFO - Step     5000 | Episodes:   166 | Mean reward (last 50):  167.724 | Std:  37.730
+2026-03-31 06:31:57,552 - INFO - Step    10000 | Episodes:   333 | Mean reward (last 50):  169.262 | Std:  39.342
+2026-03-31 06:32:36,307 - INFO - Step    15000 | Episodes:   500 | Mean reward (last 50):  212.665 | Std:  28.008
+2026-03-31 06:33:16,515 - INFO - Step    20000 | Episodes:   666 | Mean reward (last 50):  213.610 | Std:  29.859
+2026-03-31 06:33:55,080 - INFO - Step    25000 | Episodes:   833 | Mean reward (last 50):  216.827 | Std:  26.628
+2026-03-31 06:34:35,434 - INFO - Step    30000 | Episodes:  1000 | Mean reward (last 50):  217.503 | Std:  23.103
+2026-03-31 06:35:14,046 - INFO - Step    35000 | Episodes:  1166 | Mean reward (last 50):  218.852 | Std:  29.444
+2026-03-31 06:35:54,043 - INFO - Step    40000 | Episodes:  1333 | Mean reward (last 50):  212.441 | Std:  30.645
+2026-03-31 06:36:32,586 - INFO - Step    45000 | Episodes:  1500 | Mean reward (last 50):  211.137 | Std:  33.352
+2026-03-31 06:37:13,059 - INFO - Step    50000 | Episodes:  1666 | Mean reward (last 50):  214.055 | Std:  32.048
+2026-03-31 06:37:51,597 - INFO - Step    55000 | Episodes:  1833 | Mean reward (last 50):  212.965 | Std:  31.119
+2026-03-31 06:38:31,956 - INFO - Step    60000 | Episodes:  2000 | Mean reward (last 50):  211.604 | Std:  33.363
+2026-03-31 06:39:10,835 - INFO - Step    65000 | Episodes:  2166 | Mean reward (last 50):  211.507 | Std:  30.600
+2026-03-31 06:39:51,943 - INFO - Step    70000 | Episodes:  2333 | Mean reward (last 50):  220.574 | Std:  24.763
+2026-03-31 06:40:31,464 - INFO - Step    75000 | Episodes:  2500 | Mean reward (last 50):  199.237 | Std:  36.561
+2026-03-31 06:41:13,023 - INFO - Step    80000 | Episodes:  2666 | Mean reward (last 50):  203.702 | Std:  35.384
+2026-03-31 06:41:52,939 - INFO - Step    85000 | Episodes:  2833 | Mean reward (last 50):  205.346 | Std:  32.103
+2026-03-31 06:42:34,584 - INFO - Step    90000 | Episodes:  3000 | Mean reward (last 50):  197.478 | Std:  34.816
+2026-03-31 06:43:14,540 - INFO - Step    95000 | Episodes:  3166 | Mean reward (last 50):  202.630 | Std:  37.929
+2026-03-31 06:43:56,402 - INFO - Step   100000 | Episodes:  3333 | Mean reward (last 50):  204.523 | Std:  35.624
+2026-03-31 06:44:36,543 - INFO - Step   105000 | Episodes:  3500 | Mean reward (last 50):  214.919 | Std:  33.158
+2026-03-31 06:45:18,446 - INFO - Step   110000 | Episodes:  3666 | Mean reward (last 50):  214.274 | Std:  31.185
+2026-03-31 06:45:58,743 - INFO - Step   115000 | Episodes:  3833 | Mean reward (last 50):  207.611 | Std:  31.901
+2026-03-31 06:46:40,892 - INFO - Step   120000 | Episodes:  4000 | Mean reward (last 50):  210.959 | Std:  32.170
+2026-03-31 06:47:21,256 - INFO - Step   125000 | Episodes:  4166 | Mean reward (last 50):  209.481 | Std:  35.621
+2026-03-31 06:48:03,302 - INFO - Step   130000 | Episodes:  4333 | Mean reward (last 50):  205.630 | Std:  31.531
+2026-03-31 06:48:43,627 - INFO - Step   135000 | Episodes:  4500 | Mean reward (last 50):  216.511 | Std:  30.887
+2026-03-31 06:49:25,971 - INFO - Step   140000 | Episodes:  4666 | Mean reward (last 50):  207.703 | Std:  33.364
+2026-03-31 06:50:06,403 - INFO - Step   145000 | Episodes:  4833 | Mean reward (last 50):  209.607 | Std:  35.281
+2026-03-31 06:50:48,697 - INFO - Step   150000 | Episodes:  5000 | Mean reward (last 50):  212.514 | Std:  30.189
+2026-03-31 06:51:29,365 - INFO - Step   155000 | Episodes:  5166 | Mean reward (last 50):  216.122 | Std:  33.679
+2026-03-31 06:52:11,760 - INFO - Step   160000 | Episodes:  5333 | Mean reward (last 50):  205.134 | Std:  32.485
+2026-03-31 06:52:52,420 - INFO - Step   165000 | Episodes:  5500 | Mean reward (last 50):  210.357 | Std:  30.606
+2026-03-31 06:53:34,897 - INFO - Step   170000 | Episodes:  5666 | Mean reward (last 50):  212.907 | Std:  29.352
+2026-03-31 06:54:15,642 - INFO - Step   175000 | Episodes:  5833 | Mean reward (last 50):  212.792 | Std:  32.963
+2026-03-31 06:54:58,349 - INFO - Step   180000 | Episodes:  6000 | Mean reward (last 50):  207.683 | Std:  33.198
+2026-03-31 06:55:39,177 - INFO - Step   185000 | Episodes:  6166 | Mean reward (last 50):  204.708 | Std:  35.485
+2026-03-31 06:56:21,670 - INFO - Step   190000 | Episodes:  6333 | Mean reward (last 50):  212.315 | Std:  32.456
+2026-03-31 06:57:02,472 - INFO - Step   195000 | Episodes:  6500 | Mean reward (last 50):  207.548 | Std:  35.007
+2026-03-31 06:57:45,223 - INFO - Step   200000 | Episodes:  6666 | Mean reward (last 50):  211.134 | Std:  33.785
+2026-03-31 06:58:26,156 - INFO - Step   205000 | Episodes:  6833 | Mean reward (last 50):  212.299 | Std:  31.960
+2026-03-31 06:59:08,843 - INFO - Step   210000 | Episodes:  7000 | Mean reward (last 50):  212.092 | Std:  32.963
+2026-03-31 06:59:49,545 - INFO - Step   215000 | Episodes:  7166 | Mean reward (last 50):  204.980 | Std:  34.735
+2026-03-31 07:00:32,203 - INFO - Step   220000 | Episodes:  7333 | Mean reward (last 50):  213.161 | Std:  32.745
+2026-03-31 07:01:13,033 - INFO - Step   225000 | Episodes:  7500 | Mean reward (last 50):  210.917 | Std:  33.086
+2026-03-31 07:01:55,747 - INFO - Step   230000 | Episodes:  7666 | Mean reward (last 50):  220.534 | Std:  26.928
+2026-03-31 07:02:36,774 - INFO - Step   235000 | Episodes:  7833 | Mean reward (last 50):  212.276 | Std:  32.356
+2026-03-31 07:03:19,518 - INFO - Step   240000 | Episodes:  8000 | Mean reward (last 50):  205.265 | Std:  35.218
+2026-03-31 07:04:00,482 - INFO - Step   245000 | Episodes:  8166 | Mean reward (last 50):  207.916 | Std:  36.390
+2026-03-31 07:04:43,304 - INFO - Step   250000 | Episodes:  8333 | Mean reward (last 50):  209.014 | Std:  33.389
+2026-03-31 07:05:24,327 - INFO - Step   255000 | Episodes:  8500 | Mean reward (last 50):  212.420 | Std:  32.189
+2026-03-31 07:06:06,984 - INFO - Step   260000 | Episodes:  8666 | Mean reward (last 50):  208.532 | Std:  34.150
+2026-03-31 07:06:47,996 - INFO - Step   265000 | Episodes:  8833 | Mean reward (last 50):  209.817 | Std:  32.005
+2026-03-31 07:07:31,040 - INFO - Step   270000 | Episodes:  9000 | Mean reward (last 50):  208.445 | Std:  34.161
+2026-03-31 07:08:12,140 - INFO - Step   275000 | Episodes:  9166 | Mean reward (last 50):  209.226 | Std:  33.111
+2026-03-31 07:08:55,099 - INFO - Step   280000 | Episodes:  9333 | Mean reward (last 50):  206.716 | Std:  34.654
+2026-03-31 07:09:36,222 - INFO - Step   285000 | Episodes:  9500 | Mean reward (last 50):  211.642 | Std:  34.037
+2026-03-31 07:10:19,088 - INFO - Step   290000 | Episodes:  9666 | Mean reward (last 50):  206.274 | Std:  33.316
+2026-03-31 07:11:00,190 - INFO - Step   295000 | Episodes:  9833 | Mean reward (last 50):  211.827 | Std:  32.595
+2026-03-31 07:11:42,903 - INFO - Step   300000 | Episodes: 10000 | Mean reward (last 50):  213.143 | Std:  32.799
+2026-03-31 07:12:24,070 - INFO - Step   305000 | Episodes: 10166 | Mean reward (last 50):  202.064 | Std:  37.687
+2026-03-31 07:13:06,958 - INFO - Step   310000 | Episodes: 10333 | Mean reward (last 50):  216.540 | Std:  28.149
+2026-03-31 07:13:48,459 - INFO - Step   315000 | Episodes: 10500 | Mean reward (last 50):  212.161 | Std:  32.564
+2026-03-31 07:14:31,426 - INFO - Step   320000 | Episodes: 10666 | Mean reward (last 50):  213.825 | Std:  35.305
+2026-03-31 07:15:12,591 - INFO - Step   325000 | Episodes: 10833 | Mean reward (last 50):  200.871 | Std:  31.276
+2026-03-31 07:15:55,425 - INFO - Step   330000 | Episodes: 11000 | Mean reward (last 50):  201.805 | Std:  34.990
+2026-03-31 07:16:36,349 - INFO - Step   335000 | Episodes: 11166 | Mean reward (last 50):  216.790 | Std:  34.345
+2026-03-31 07:17:19,110 - INFO - Step   340000 | Episodes: 11333 | Mean reward (last 50):  216.874 | Std:  26.953
+2026-03-31 07:18:00,191 - INFO - Step   345000 | Episodes: 11500 | Mean reward (last 50):  211.019 | Std:  33.221
+2026-03-31 07:18:43,023 - INFO - Step   350000 | Episodes: 11666 | Mean reward (last 50):  208.890 | Std:  34.235
+2026-03-31 07:19:24,087 - INFO - Step   355000 | Episodes: 11833 | Mean reward (last 50):  206.705 | Std:  33.340
+2026-03-31 07:20:06,748 - INFO - Step   360000 | Episodes: 12000 | Mean reward (last 50):  208.867 | Std:  36.014
+2026-03-31 07:20:47,729 - INFO - Step   365000 | Episodes: 12166 | Mean reward (last 50):  204.074 | Std:  35.267
+2026-03-31 07:21:30,879 - INFO - Step   370000 | Episodes: 12333 | Mean reward (last 50):  209.899 | Std:  31.101
+2026-03-31 07:22:11,963 - INFO - Step   375000 | Episodes: 12500 | Mean reward (last 50):  209.131 | Std:  32.709
+2026-03-31 07:22:54,787 - INFO - Step   380000 | Episodes: 12666 | Mean reward (last 50):  207.289 | Std:  33.946
+2026-03-31 07:23:35,937 - INFO - Step   385000 | Episodes: 12833 | Mean reward (last 50):  200.505 | Std:  34.283
+2026-03-31 07:24:18,820 - INFO - Step   390000 | Episodes: 13000 | Mean reward (last 50):  207.627 | Std:  33.442
+2026-03-31 07:25:00,180 - INFO - Step   395000 | Episodes: 13166 | Mean reward (last 50):  211.375 | Std:  33.962
+2026-03-31 07:25:43,094 - INFO - Step   400000 | Episodes: 13333 | Mean reward (last 50):  217.271 | Std:  30.620
+2026-03-31 07:26:24,222 - INFO - Step   405000 | Episodes: 13500 | Mean reward (last 50):  212.252 | Std:  32.917
+2026-03-31 07:27:07,117 - INFO - Step   410000 | Episodes: 13666 | Mean reward (last 50):  207.049 | Std:  33.435
+2026-03-31 07:27:48,402 - INFO - Step   415000 | Episodes: 13833 | Mean reward (last 50):  208.070 | Std:  35.750
+2026-03-31 07:28:31,262 - INFO - Step   420000 | Episodes: 14000 | Mean reward (last 50):  211.797 | Std:  30.968
+2026-03-31 07:29:12,304 - INFO - Step   425000 | Episodes: 14166 | Mean reward (last 50):  212.379 | Std:  30.978
+2026-03-31 07:29:55,216 - INFO - Step   430000 | Episodes: 14333 | Mean reward (last 50):  200.322 | Std:  36.087
+2026-03-31 07:30:36,496 - INFO - Step   435000 | Episodes: 14500 | Mean reward (last 50):  213.737 | Std:  30.232
+2026-03-31 07:31:19,514 - INFO - Step   440000 | Episodes: 14666 | Mean reward (last 50):  205.914 | Std:  35.557
+2026-03-31 07:32:00,902 - INFO - Step   445000 | Episodes: 14833 | Mean reward (last 50):  211.841 | Std:  30.470
+2026-03-31 07:32:43,880 - INFO - Step   450000 | Episodes: 15000 | Mean reward (last 50):  210.600 | Std:  33.202
+2026-03-31 07:33:25,264 - INFO - Step   455000 | Episodes: 15166 | Mean reward (last 50):  208.403 | Std:  36.874
+2026-03-31 07:34:08,349 - INFO - Step   460000 | Episodes: 15333 | Mean reward (last 50):  210.015 | Std:  30.959
+2026-03-31 07:34:49,710 - INFO - Step   465000 | Episodes: 15500 | Mean reward (last 50):  214.792 | Std:  30.681
+2026-03-31 07:35:32,712 - INFO - Step   470000 | Episodes: 15666 | Mean reward (last 50):  200.772 | Std:  35.941
+2026-03-31 07:36:13,997 - INFO - Step   475000 | Episodes: 15833 | Mean reward (last 50):  216.659 | Std:  32.790
+2026-03-31 07:36:57,137 - INFO - Step   480000 | Episodes: 16000 | Mean reward (last 50):  204.189 | Std:  32.138
+2026-03-31 07:37:38,469 - INFO - Step   485000 | Episodes: 16166 | Mean reward (last 50):  208.815 | Std:  33.593
+2026-03-31 07:38:21,640 - INFO - Step   490000 | Episodes: 16333 | Mean reward (last 50):  207.973 | Std:  33.643
+2026-03-31 07:39:02,944 - INFO - Step   495000 | Episodes: 16500 | Mean reward (last 50):  215.276 | Std:  31.507
+2026-03-31 07:39:46,035 - INFO - Step   500000 | Episodes: 16666 | Mean reward (last 50):  204.934 | Std:  35.341
+2026-03-31 07:39:46,051 - INFO - Modelo salvo: DDPG_opt_best_A_opt02_20260331_063054
+2026-03-31 07:39:46,051 - INFO - Best eval reward: 227.6964

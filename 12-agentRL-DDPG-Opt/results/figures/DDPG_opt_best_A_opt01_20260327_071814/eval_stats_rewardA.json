@@ -1,0 +1,36 @@
+{
+  "run_dir": "c:\\Users\\davib\\Downloads\\Pesquisa\\12-agentRL-DDPG-Opt\\models\\DDPG_opt_best_A_opt01_20260327_071814",
+  "reward_type": "A",
+  "n_episodes": 20,
+  "return_mean": 217.10911660417915,
+  "return_std": 41.43490148817277,
+  "final_qreb_mean": 2.668811659638157,
+  "final_qreb_std": 0.13366965297333716,
+  "final_deltaT_mean": 105.10719496601764,
+  "final_deltaT_std": 1.1579666018407522,
+  "training_meta": {
+    "run_name": "DDPG_opt_best_A_opt01_20260327_071814",
+    "reward_type": "A",
+    "total_timesteps": 500000,
+    "ddpg_params": {
+      "learning_rate": 0.00040184814723675876,
+      "buffer_size": 100000,
+      "learning_starts": 2173,
+      "batch_size": 256,
+      "tau": 0.006554611989564873,
+      "gamma": 0.9554116968850899,
+      "train_freq": 4,
+      "gradient_steps": 4
+    },
+    "noise_sigma": 0.24070283641855783,
+    "reward_weights_a": {
+      "w1": 0.28668748927739673,
+      "w2": 0.650396582494094,
+      "w3": 0.8613609563753646
+    },
+    "seed": 42,
+    "best_mean_reward": 812.2368567,
+    "total_episodes": 16666,
+    "episode_rewards_mean": 767.8525789150223
+  }
+}

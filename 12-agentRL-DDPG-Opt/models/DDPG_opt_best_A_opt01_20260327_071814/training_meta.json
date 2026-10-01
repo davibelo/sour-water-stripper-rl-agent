@@ -1,0 +1,25 @@
+{
+  "run_name": "DDPG_opt_best_A_opt01_20260327_071814",
+  "reward_type": "A",
+  "total_timesteps": 500000,
+  "ddpg_params": {
+    "learning_rate": 0.00040184814723675876,
+    "buffer_size": 100000,
+    "learning_starts": 2173,
+    "batch_size": 256,
+    "tau": 0.006554611989564873,
+    "gamma": 0.9554116968850899,
+    "train_freq": 4,
+    "gradient_steps": 4
+  },
+  "noise_sigma": 0.24070283641855783,
+  "reward_weights_a": {
+    "w1": 0.28668748927739673,
+    "w2": 0.650396582494094,
+    "w3": 0.8613609563753646
+  },
+  "seed": 42,
+  "best_mean_reward": 812.2368567,
+  "total_episodes": 16666,
+  "episode_rewards_mean": 767.8525789150223
+}

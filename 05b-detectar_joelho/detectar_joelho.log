@@ -1,0 +1,143 @@
+======================================================================
+DETECCAO DO JOELHO OPERACIONAL — Tbottom vs Qreb
+======================================================================
+
+Total de amostras: 976
+Faixa de Qreb: [2.0131, 5.9989]
+Faixa de Tbottom: [154.50, 168.11]
+Faixa de delta_T: [2.06, 107.18]
+
+Bins com dados: 36 (de 36 bins)
+
+  Qreb_mid |   Tb_med |   dT_med |   Tt_med |    n
+--------------------------------------------------
+     2.074 |   156.23 |    96.00 |    60.17 |   19
+     2.182 |   159.55 |    99.45 |    60.12 |   24
+     2.294 |   160.92 |   100.74 |    60.17 |   24
+     2.401 |   162.76 |   102.60 |    60.24 |   25
+     2.513 |   163.93 |   103.55 |    60.32 |   27
+     2.622 |   164.80 |   104.17 |    60.42 |   27
+     2.732 |   165.19 |   103.69 |    61.05 |   28
+     2.845 |   165.98 |   103.77 |    62.24 |   28
+     2.955 |   166.00 |   102.32 |    64.23 |   26
+     3.064 |   165.88 |    98.81 |    67.61 |   28
+     3.175 |   165.75 |    74.60 |    91.09 |   28
+     3.288 |   166.26 |    65.94 |   100.67 |   28
+     3.399 |   166.72 |    42.89 |   124.67 |   27
+     3.508 |   166.65 |    20.92 |   145.56 |   28
+     3.620 |   166.21 |    12.77 |   152.87 |   28
+     3.732 |   166.63 |    11.55 |   153.83 |   27
+     3.840 |   166.44 |     8.01 |   158.07 |   28
+     3.949 |   166.89 |     7.52 |   159.02 |   27
+     4.060 |   166.42 |     6.23 |   159.72 |   28
+     4.172 |   166.09 |     5.92 |   160.08 |   28
+     4.281 |   166.58 |     5.02 |   161.16 |   27
+     4.391 |   166.24 |     4.59 |   161.50 |   28
+     4.503 |   166.23 |     4.43 |   161.68 |   28
+     4.616 |   166.26 |     3.96 |   162.36 |   27
+     4.723 |   166.14 |     3.72 |   162.53 |   28
+     4.836 |   166.49 |     3.87 |   162.53 |   28
+     4.945 |   166.16 |     3.47 |   162.79 |   27
+     5.055 |   166.60 |     3.34 |   162.97 |   28
+     5.169 |   166.42 |     3.44 |   163.03 |   28
+     5.280 |   166.22 |     3.06 |   163.09 |   28
+     5.390 |   166.50 |     2.86 |   163.60 |   27
+     5.499 |   166.87 |     3.13 |   163.63 |   28
+     5.612 |   166.05 |     2.90 |   163.34 |   28
+     5.720 |   166.98 |     3.09 |   164.03 |   27
+     5.830 |   166.43 |     2.59 |   163.86 |   28
+     5.943 |   166.71 |     2.65 |   164.15 |   28
+
+======================================================================
+METODO 1: Kneedle — Tbottom vs Qreb
+======================================================================
+
+Kneedle: maximo desvio da diagonal em Qreb = 2.845
+  Tbottom nesse ponto: 165.98 C
+  Desvio normalizado: 0.7079
+
+======================================================================
+METODO 2: Maxima curvatura — Tbottom vs Qreb
+======================================================================
+
+Suavizacao Savitzky-Golay: window=7, polyorder=3
+
+Maxima curvatura em Qreb = 3.508
+  Tbottom nesse ponto: 166.65 C
+  Curvatura: 7.754591
+
+  Derivada primeira (dTb/dQreb) por bin:
+    Qreb=2.074: dTb/dQreb=+25.513, d2Tb/dQreb2=-30.495
+    Qreb=2.182: dTb/dQreb=+22.195, d2Tb/dQreb2=-40.176
+    Qreb=2.294: dTb/dQreb=+16.583, d2Tb/dQreb2=-46.987
+    Qreb=2.401: dTb/dQreb=+11.891, d2Tb/dQreb2=-34.867
+    Qreb=2.513: dTb/dQreb=+9.061, d2Tb/dQreb2=-20.791
+    Qreb=2.622: dTb/dQreb=+7.270, d2Tb/dQreb2=-20.721
+    Qreb=2.732: dTb/dQreb=+4.523, d2Tb/dQreb2=-23.011
+    Qreb=2.845: dTb/dQreb=+2.163, d2Tb/dQreb2=-17.451
+    Qreb=2.955: dTb/dQreb=+0.612, d2Tb/dQreb2=-7.740
+    Qreb=3.064: dTb/dQreb=+0.459, d2Tb/dQreb2=+4.137
+    Qreb=3.175: dTb/dQreb=+1.533, d2Tb/dQreb2=+6.922
+    Qreb=3.288: dTb/dQreb=+1.992, d2Tb/dQreb2=-0.551
+    Qreb=3.399: dTb/dQreb=+1.426, d2Tb/dQreb2=-8.109
+    Qreb=3.508: dTb/dQreb=+0.216, d2Tb/dQreb2=-8.303
+    Qreb=3.620: dTb/dQreb=-0.394, d2Tb/dQreb2=+1.243
+    Qreb=3.732: dTb/dQreb=+0.508, d2Tb/dQreb2=+3.001
+    Qreb=3.840: dTb/dQreb=+0.308, d2Tb/dQreb2=-4.682
+    Qreb=3.949: dTb/dQreb=-0.513, d2Tb/dQreb2=-4.636
+    Qreb=4.060: dTb/dQreb=-0.701, d2Tb/dQreb2=-2.109
+    Qreb=4.172: dTb/dQreb=-0.984, d2Tb/dQreb2=+1.006
+    Qreb=4.281: dTb/dQreb=-0.505, d2Tb/dQreb2=+4.401
+    Qreb=4.391: dTb/dQreb=-0.020, d2Tb/dQreb2=+0.646
+    Qreb=4.503: dTb/dQreb=-0.370, d2Tb/dQreb2=-0.496
+    Qreb=4.616: dTb/dQreb=-0.125, d2Tb/dQreb2=+3.446
+    Qreb=4.723: dTb/dQreb=+0.374, d2Tb/dQreb2=+3.979
+    Qreb=4.836: dTb/dQreb=+0.742, d2Tb/dQreb2=+0.248
+    Qreb=4.945: dTb/dQreb=+0.448, d2Tb/dQreb2=-4.549
+    Qreb=5.055: dTb/dQreb=-0.262, d2Tb/dQreb2=+0.222
+    Qreb=5.169: dTb/dQreb=+0.535, d2Tb/dQreb2=+2.026
+    Qreb=5.280: dTb/dQreb=+0.207, d2Tb/dQreb2=-2.169
+    Qreb=5.390: dTb/dQreb=+0.051, d2Tb/dQreb2=+3.199
+    Qreb=5.499: dTb/dQreb=+0.894, d2Tb/dQreb2=+0.398
+    Qreb=5.612: dTb/dQreb=+0.064, d2Tb/dQreb2=-4.319
+    Qreb=5.720: dTb/dQreb=-0.095, d2Tb/dQreb2=+2.672
+    Qreb=5.830: dTb/dQreb=+0.667, d2Tb/dQreb2=+5.887
+    Qreb=5.943: dTb/dQreb=+1.214, d2Tb/dQreb2=+4.849
+
+======================================================================
+METODO 3: Pico de delta_T = Tbottom - Ttop
+======================================================================
+
+Pico de delta_T (mediana por bin) em Qreb = 2.622
+  delta_T nesse ponto: 104.17 C
+  Regiao com delta_T > 90% do pico: Qreb in [2.074, 3.064]
+
+======================================================================
+METODO 4: Transicao dTbottom/dQreb — ponto de desaceleracao
+======================================================================
+
+Transicao de dTb/dQreb (queda > 70%): Qreb ~ 2.568
+  dTb/dQreb antes: 9.061
+  dTb/dQreb depois: 7.270
+
+======================================================================
+RESUMO E VALIDACAO
+======================================================================
+
+Resultados dos metodos:
+  Kneedle             : Qreb = 2.845
+  Max curvatura       : Qreb = 3.508
+  Pico delta_T        : Qreb = 2.622
+
+Media dos metodos: Qreb = 2.992 +/- 0.376
+
+Validacao visual (esperado: Qreb entre 2.4 e 3.0):
+  Kneedle             : Qreb = 2.845 -> OK
+  Max curvatura       : Qreb = 3.508 -> FORA
+  Pico delta_T        : Qreb = 2.622 -> OK
+
+2/3 metodos confirmam joelho entre 2.4 e 3.0
+
+Joelho adotado (mediana dos metodos dentro da faixa de validacao): Qreb = 2.733
+  Tbottom no joelho: 165.19 C
+  delta_T no joelho: 103.69 C

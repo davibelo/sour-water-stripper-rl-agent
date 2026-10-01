@@ -1,0 +1,26 @@
+{
+  "run_name": "PPO_opt_best_A_opt01_20260326_205708",
+  "reward_type": "A",
+  "total_timesteps": 500000,
+  "ppo_params": {
+    "learning_rate": 0.00018965849016137684,
+    "n_steps": 512,
+    "batch_size": 256,
+    "n_epochs": 20,
+    "gamma": 0.9712415561339457,
+    "gae_lambda": 0.9775312651017459,
+    "clip_range": 0.2559387325161434,
+    "ent_coef": 0.005393710378166564,
+    "vf_coef": 0.7427958569088456,
+    "max_grad_norm": 0.7650367584762835
+  },
+  "reward_weights_a": {
+    "w1": 0.29974646185826626,
+    "w2": 0.5054622754128903,
+    "w3": 0.6969317669975603
+  },
+  "seed": 42,
+  "best_mean_reward": 863.0291582,
+  "total_episodes": 16674,
+  "episode_rewards_mean": 3.5399482573784917
+}

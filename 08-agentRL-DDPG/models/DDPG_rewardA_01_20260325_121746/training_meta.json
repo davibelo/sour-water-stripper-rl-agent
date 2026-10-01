@@ -1,0 +1,20 @@
+{
+  "run_name": "DDPG_rewardA_01_20260325_121746",
+  "reward_type": "A",
+  "total_timesteps": 500000,
+  "ddpg_hyperparams": {
+    "learning_rate": 0.001,
+    "buffer_size": 100000,
+    "learning_starts": 1000,
+    "batch_size": 256,
+    "tau": 0.005,
+    "gamma": 0.99,
+    "train_freq": 1,
+    "gradient_steps": 1
+  },
+  "action_noise_sigma": 0.1,
+  "seed": 42,
+  "episode_rewards_mean": 226.12984784640372,
+  "episode_rewards_std": 34.62620263961234,
+  "total_episodes": 16666
+}

@@ -1,0 +1,56 @@
+Eu tenho resultados de simulação no arquivo sim_results.csv, onde as colunas são:
+case_id: numeracão dos casos de simulação
+As entradas são: Qfeed	Tfeed	cH2S	cNH3	Qreb	Pcolumn	Ecolumn
+As saídas são: Tbottom	Ttop
+
+Criar um script para análise exploratória dos dados, incluindo visualizações e estatísticas descritivas
+
+Usar min/max scaling para normalizar os dados
+inputs = [Qfeed, Tfeed, cH2S, cNH3, Qreb, Pcolumn, Ecolumn]
+mins = np.array([47500, 118.95,  875,  750, 2.4, 5.7, 66.5])
+maxs = np.array([52500, 125.05, 3500, 3000, 6.0, 6.3, 73.5])
+
+Quanto às saídas (Tbottom e Ttop), usar min/max scaling para normalizá-las também, usando os limites min/max atingidos pelos dados
+
+Crie tudo dentro da pasta dos resultados e organize os arquivos de forma clara, crie também subpastas para armazenamento de imagens e resultados
+
+xxxx
+
+Crie um script preparar os dados limpos no csv sim_results_cleaned.csv para treinamento em uma DNN
+
+Normalize com min/max scaling, para as entradas usar os valores abaixo (deixar no cabeçalho do arquivo):
+inputs = [Qfeed, Tfeed, cH2S, cNH3, Qreb, Pcolumn, Ecolumn]
+mins = np.array([47500, 118.95,  875,  750, 2.4, 5.7, 66.5])
+maxs = np.array([52500, 125.05, 3500, 3000, 6.0, 6.3, 73.5])
+
+Quanto às saídas (Tbottom e Ttop), usar min/max scaling para normalizá-las também, usando os limites min/max atingidos pelos dados.
+
+Salvar os valores usados para normalização em um arquivo separado, incluindo os limites min/max para entradas e saídas para poder ser reutilizado quando se desejar inverter a normalização
+
+Depois separe os dados em conjuntos de treino, validação e teste, utilizando uma proporção de 70%, 15% e 15%, respectivamente ajustável no cabeçalho
+
+
+
+xxxx
+
+Criar os seguintes scripts:
+1. Script para pré-processamento dos dados, incluindo limpeza, normalização e divisão em conjuntos de treino e teste
+
+3. Script para treinamento e teste de uma DNN utilizando TensorFlow com otimização de hiperparâmetros via Optuna.
+4. Script para treinamento e teste de DNN utilizando PyTorch e também otimização de hiperparâmetros via Optuna.
+
+A DNN pode partir de uma rede com 3 camadas, a camada de entrada com o número de neurônios igual ao número de entradas, uma camada oculta com neurônios ajustáveis e a camada de saída com o número de neurônios igual ao número de saídas.
+
+
+
+xxxx
+eu tenho 2 tipos de modelos surrogate
+um que tem 2 modelos (um modelo por output) e outro que tem um modelo para os 2 outputs
+
+os scripts de treinamento do agent RL PPO só está usando a primeira opcao (2 modelos)
+eu preciso adapta-los para usar também a opção de 1 modelo somente para as 2 outputs
+mas eu quero que isso seja automático
+
+na hora que o surrogate_env.py for carregar os modelos, ele deve verificar na pasta de modelos se aquele MODEL_ID possui 1 arquivo ou 2 arquivos (nesse caso tem um sufixo no arquivo que identifica o output que ele prevê)
+
+o arquivo surrogate_env, na hora de fazer as predições, também precisa saber qual tipo de modelo foi carregado, também deixe isso automático.
