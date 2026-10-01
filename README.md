@@ -279,5 +279,6 @@ Resumo dos resultados consolidados na apresentação
   branches nem fazer commit automaticamente (ver `CLAUDE.md`).
 - Arquivos de simulação do Aspen e modelos de *trials* do Optuna são, em parte,
   ignorados pelo Git (ver `.gitignore`); apenas os melhores modelos são versionados.
-```#   s o u r - w a t e r - s t r i p p e r - r l - a g e n t  
+```#   s o u r - w a t e r - s t r i p p e r - r l - a g e n t 
+ 
  
